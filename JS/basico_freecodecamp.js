@@ -58,3 +58,30 @@ const myDog = {
 
 /*---------------------------------------------------------------------------*/
 
+/*----------------TESTAR OBJETOS POR PROPRIEDADES-------------------
+Às vezes, é útil verificar se a propriedade de um determinado objeto existe ou não.
+Podemos usar o método de objetos .hasOwnProperty(propname) para determinar se
+aquele objeto possui o nome de propriedade fornecido. .hasOwnProperty()
+retorna true ou false se a propriedade for encontrada ou não.*/
+
+//exemplos
+
+const myObj = {
+  top: "hat",
+  bottom: "pants"
+};
+
+myObj.hasOwnProperty("top");
+myObj.hasOwnProperty("middle");
+
+function checkObj(obj, checkProp) {  
+  if (obj.hasOwnProperty(checkProp)) {
+    return obj[checkProp];
+  }
+    else {
+      return 'Not Found'
+    }  
+}
+
+/*---------------------------------------------------------------------------*/
+
