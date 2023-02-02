@@ -85,3 +85,38 @@ function checkObj(obj, checkProp) {
 
 /*---------------------------------------------------------------------------*/
 
+/*------------------MANIPULAR OBJETOS COMPLEXOS-------------------------
+Às vezes, você pode querer armazenar dados em uma Estrutura de Dados flexível.
+Um objeto JavaScript é uma forma de lidar com dados flexíveis.
+Eles permitem combinações arbitrárias de strings, numbers, booleans,
+arrays, functions e objects.*/
+
+//exemplo
+
+const myMusic = [
+  {
+    "artist": "Billy Joel",
+    "title": "Piano Man",
+    "release_year": 1973,
+    "formats": [
+      "CD",
+      "8T",
+      "LP"
+    ],
+    "gold": true
+  },
+  {
+    "artist": "S.O.A.D",
+    "title": "Toxity",
+    "release_year": 2001,
+    "formats": [
+      "CD",
+      "8T",
+      "LP"
+    ],
+    "gold": true
+  }
+];
+
+/*---------------------------------------------------------------------------*/
+
