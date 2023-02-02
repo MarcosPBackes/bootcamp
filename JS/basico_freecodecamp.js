@@ -41,4 +41,20 @@ function cc(card) {
   cc(2); cc('J'); cc(9); cc(2); cc(7);
   cc(2); cc(2); cc(10);
   cc(3); cc(2); cc('A'); cc(10); cc('K');
-  /*---------------------------------------------------------------------------*/
+
+/*---------------------------------------------------------------------------*/
+
+/*--------------------CRIAR OBJETOS EM JAVASCRIPT---------------------
+Faça um objeto que representa um cachorro chamado myDog que contém
+as propriedades name (uma string), legs, tails e friends.
+Você pode definir essas propriedades do objeto para os valores que deseja,
+contanto que name seja uma string, legs e tails sejam números, e friends seja um array.*/
+const myDog = {  
+  name: 'Dog',
+  legs: 4,
+  tails: 1,
+  friends: ['Cat', 'Frog']  
+};
+
+/*---------------------------------------------------------------------------*/
+
