@@ -120,3 +120,59 @@ const myMusic = [
 
 /*---------------------------------------------------------------------------*/
 
+/*--------------------ACESSAR OBJETOS ANINHADOS----------------------
+As subpropriedades de objetos podem ser acessadas ao 
+encadear a notação de ponto e de colchetes.*/
+
+//exemplos
+
+const ourStorage = {
+  "desk": {
+    "drawer": "stapler"
+  },
+  "cabinet": {
+    "top drawer": { 
+      "folder1": "a file",
+      "folder2": "secrets"
+    },
+    "bottom drawer": "soda"
+  }
+};
+ourStorage.cabinet["top drawer"].folder2;
+ourStorage.desk.drawer;
+
+const myStorage = {
+  "car": {
+    "inside": {
+      "glove box": "maps",
+      "passenger seat": "crumbs"
+     },
+    "outside": {
+      "trunk": "jack"
+    }
+  }
+};
+
+const gloveBoxContents = myStorage.car.inside['glove box'];
+
+/*---------------------------------------------------------------------------*/
+
+/*---------------------INTERARAÇÃO COM LAÇOS WHILE--------------------------
+Você pode rodar o mesmo código várias vezes usando um laço.
+
+O primeiro tipo de laço que aprenderemos é chamado de laço while porque
+ele rodará enquanto uma condição específica for verdadeira e vai parar 
+uma vez que a condição não for mais verdadeira.*/
+
+//exemplo
+
+const myArray = [];
+let i = 5;
+
+while (0 <= i) {
+  myArray.push(i);
+  i--;
+}
+
+/*---------------------------------------------------------------------------*/
+
