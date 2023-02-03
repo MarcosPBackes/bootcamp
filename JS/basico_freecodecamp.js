@@ -329,3 +329,32 @@ lookUpProfile("Sherlock", "likes");
 
 /*---------------------------------------------------------------------------*/
 
+/*-------------------------OPERADOR CONDICIONAL (TERNARIO)--------------------
+
+O operador condicional, também chamado de operador ternário, pode ser usado 
+como uma expressão if-else de uma linha.*/
+
+//exemplos
+
+//antes
+
+function findGreater(a, b) {
+  if(a > b) {
+    return "a is greater";
+  }
+  else {
+    return "b is greater or equal";
+  }
+}
+
+//depois
+
+function findGreater(a, b) {
+  return a > b ? "a is greater" : "b is greater or equal";
+}
+function checkEqual(a, b) {
+  return a == b ? 'Equal' : 'Not Equal';
+}
+
+/*---------------------------------------------------------------------------*/
+
