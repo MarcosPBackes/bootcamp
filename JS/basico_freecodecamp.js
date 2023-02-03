@@ -204,5 +204,42 @@ for (let i = 1; i <= 5; i++) {
   alphaArray.push(i);
 }
 
+const betaArray = [];
+
+for (let i = 0; i < 10; i += 2) {
+  betaArray.push(i);
+}
+
+const gamaArray = [];
+
+for (let i = 1; i <= 9; i += 2) {
+  gamaArray.push(i);
+}
+
+const deltaArray = [];
+
+for (let i = 9; i > 0; i -= 2) {
+  deltaArray.push(i);
+}
+
+const epsilonArr = [2, 3, 4, 5, 6];
+
+let total = 0;
+for (let i = 0; i < epsilonArr.length; i++) {
+  total += epsilonArr[i];
+}
+
+//exemplo FOR aninhado
+
+function multiplyAll(arr) {
+  let product = 1;
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = 0; j < arr[i].length; j++) {
+      product = product * arr[i][j]
+    }
+  }
+  return product;
+}
+
 /*---------------------------------------------------------------------------*/
 
