@@ -159,7 +159,6 @@ const gloveBoxContents = myStorage.car.inside['glove box'];
 
 /*---------------------INTERARAÇÃO COM LAÇOS WHILE--------------------------
 Você pode rodar o mesmo código várias vezes usando um laço.
-
 O primeiro tipo de laço que aprenderemos é chamado de laço while porque
 ele rodará enquanto uma condição específica for verdadeira e vai parar 
 uma vez que a condição não for mais verdadeira.*/
@@ -172,6 +171,37 @@ let i = 5;
 while (0 <= i) {
   myArray.push(i);
   i--;
+}
+
+/*---------------------------------------------------------------------------*/
+
+/*--------------------INTERAÇÃO COM LAÇOS FOR----------------------------
+Você pode rodar o mesmo código várias vezes usando um laço.
+O tipo mais comum de laço JavaScript é chamado de laço for, porque ele é
+executado por um número especificado de vezes. Laços for são declarados com 
+três expressões opcionais separadas por ponto e vírgula:for (a; b; c), 
+onde a é a declaração de inicialização, b é a declaração de condição, 
+e c é a expressão final. A declaração de inicialização é executada apenas 
+uma vez antes de o laço iniciar. Normalmente, é usada para definir e 
+configurar sua variável de laço. A declaração de condição é verificada no 
+início de cada iteração do laço e vai continuar enquanto seu valor for true. 
+Quando a condição for false no início da iteração, o laço vai parar de executar.
+Isso significa que se a condição de início for falsa, seu laço nunca será executado.
+A expressão final é executada no final de cada iteração do laço, antes da 
+verificação da próxima condição e normalmente é usada para incrementar ou 
+decrementar o contador do laço.*/
+
+//exemplos
+
+const ourArray = [];
+
+for (let i = 0; i < 5; i++) {
+  ourArray.push(i);
+}
+
+const alphaArray = [];
+for (let i = 1; i <= 5; i++) {
+  alphaArray.push(i);
 }
 
 /*---------------------------------------------------------------------------*/
