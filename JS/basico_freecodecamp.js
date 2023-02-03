@@ -261,3 +261,71 @@ do {
 
 /*---------------------------------------------------------------------------*/
 
+/*----------------------SUBSTITUIR LAÇOS COM RECURSÃO-----------------------
+Recursão é o conceito de que uma função pode ser chamada por ela mesma.*/
+
+//exemplo
+
+function sum(arr, n) {  
+  if (n <= 0) {
+    return 0;
+  } else {
+    return sum(arr, n - 1) + arr[n - 1];
+  }  
+}
+
+/*---------------------------------------------------------------------------*/
+
+/*-------------------------------PESQUISAR PERFIL---------------------------
+Temos um array de objetos representando pessoas diferentes nas nossas listas 
+de contatos.*/
+
+//exemplo
+
+const contacts = [
+  {
+    firstName: "Akira",
+    lastName: "Laine",
+    number: "0543236543",
+    likes: ["Pizza", "Coding", "Brownie Points"],
+  },
+  {
+    firstName: "Harry",
+    lastName: "Potter",
+    number: "0994372684",
+    likes: ["Hogwarts", "Magic", "Hagrid"],
+  },
+  {
+    firstName: "Sherlock",
+    lastName: "Holmes",
+    number: "0487345643",
+    likes: ["Intriguing Cases", "Violin"],
+  },
+  {
+    firstName: "Kristian",
+    lastName: "Vos",
+    number: "unknown",
+    likes: ["JavaScript", "Gaming", "Foxes"],
+  },
+];
+
+function lookUpProfile(name, prop) {
+  for (let i = 0; i < contacts.length; i++) {
+    if (contacts[i].firstName === name) { //busca pelo valor de firstName
+      if (contacts[i].hasOwnProperty(prop)) { //busca pela propriedade de contacts
+        return contacts[i][prop];
+      } else {
+        return "No such property";
+      }
+    }
+  }
+  return "No such contact"
+}
+
+//chamada
+
+lookUpProfile("Kristian", "lastName");
+lookUpProfile("Sherlock", "likes");
+
+/*---------------------------------------------------------------------------*/
+
