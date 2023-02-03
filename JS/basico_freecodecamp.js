@@ -157,7 +157,7 @@ const gloveBoxContents = myStorage.car.inside['glove box'];
 
 /*---------------------------------------------------------------------------*/
 
-/*---------------------INTERARAÇÃO COM LAÇOS WHILE--------------------------
+/*---------------------INTERAÇÃO COM LAÇOS WHILE--------------------------
 Você pode rodar o mesmo código várias vezes usando um laço.
 O primeiro tipo de laço que aprenderemos é chamado de laço while porque
 ele rodará enquanto uma condição específica for verdadeira e vai parar 
@@ -240,6 +240,24 @@ function multiplyAll(arr) {
   }
   return product;
 }
+
+/*---------------------------------------------------------------------------*/
+
+/*-----------------------INTERAÇÃO LAÇOS DO..WHILE-----------------------
+O próximo tipo de laço que você aprenderá é chamado de laço do...while. 
+O laço do...while é chamado assim porque primeiro fará algo (do) ou executará 
+algo uma vez dentro do bloco de código, não importando o que acontecer. Em seguida, 
+continuará a executar o laço enquanto (while) a condição for true.*/
+
+//exemplo
+
+const dzetaArray = [];
+let iAlpha = 10;
+
+do {
+  dzetaArray.push(i);
+  iAlpha++;
+} while (i < 11);
 
 /*---------------------------------------------------------------------------*/
 
