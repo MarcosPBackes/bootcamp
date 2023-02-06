@@ -96,3 +96,47 @@ multiplier(4, 2);
 
 const myConcat = (arr1, arr2) => arr1.concat(arr2); // parametro multiplo
 myConcat([1, 2], [3, 4, 5]);
+
+/*---------------------------------------------------------------------------*/
+
+/*--------------PARAMETROS REST COM PARAMETTROS DE FUNÇÃO----------------------
+Para nos ajuda a criar funções mais flexíveis, ES6 introduziu o parâmetro rest
+para parâmetros de funções. Com o parâmetro rest, você pode criar funções que 
+recebem um número variável de argumentos. Esses argumentos são armazenados em 
+um array que pode ser acessado depois dentro da função.*/
+
+//exemplos
+
+function howMany(...args) { //retorna quantidade de argumentos
+    return "You have passed " + args.length + " arguments.";
+  }
+ 
+const sum = (...args) => { //retorna soma dos argumentos passados
+return args.reduce((a, b) => a + b, 0); //.reduce reduz array para valor unico e executa
+}                                       //a funçao para cada valor dentro do array
+sum(0,1,2);
+sum(1,2,3,4);
+sum(5);
+sum();
+
+/*---------------------------------------------------------------------------*/
+
+/*--------------ATRIBUIÇAO E DESESTRUTURAÇAO PARA EXTRAIR VALORES-------------
+Atribuição de desestruturação é uma sintaxe especial introduzida na ES6, para 
+atribuir nitidamente valores retirados diretamente de um objeto.*/
+
+//exemplos
+
+const user = { name: 'John Doe', age: 34 };
+const nome = user.name;//normal
+const idade = user.age;//normal
+const { name, age } = user;//sintaxe de desestruturaçao
+
+const HIGH_TEMPERATURES = {
+    yesterday: 75,
+    today: 77,
+    tomorrow: 80
+  };  
+  const { today, tomorrow } = HIGH_TEMPERATURES//sintaxe de desestruturaçao
+  
+/*---------------------------------------------------------------------------*/
