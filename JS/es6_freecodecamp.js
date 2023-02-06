@@ -23,7 +23,7 @@ editInPlace();
 
 /*---------------------------------------------------------------------------*/
 
-/*------------------IMPEDIR MODIFICAÇAO DE UM OBEJETO-------------------------
+/*------------------IMPEDIR MODIFICAÇAO DE UM OBJETO-------------------------
 Como visto no desafio anterior, a declaração const sozinha, na verdade, não 
 protege a mutação de seus dados. Para garantir que seus dados não mudem, 
 o JavaScript fornece a função Object.freeze que previne os dados de serem modificados.
@@ -55,6 +55,31 @@ let obj = {
   }
   const PI = freezeObj();
 
-  /*---------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------*/
 
-  
+/*-----------------FUNÇOES ANONIMAS COM ARROW FUNCTION------------------------
+No JavaScript, muitas vezes não precisamos nomear nossas funções, especialmente 
+quando passamos uma função como argumento para outra função. Em vez disso, 
+criamos funções anônimas. Como não vamos reutilizar essas funções posteriormente, 
+não precisamos nomeá-las.*/
+
+//exemplos
+
+//antes
+
+const myFuncA = function() {
+    const myVar = "value";
+    return myVar;
+  }
+
+var magicA = function() {
+return new Date();
+};
+
+//depois
+
+const myFuncD = () => "value";
+
+const magicD = () => new Date();
+
+/*---------------------------------------------------------------------------*/
