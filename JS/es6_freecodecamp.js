@@ -140,3 +140,16 @@ const HIGH_TEMPERATURES = {
   const { today, tomorrow } = HIGH_TEMPERATURES//sintaxe de desestruturaçao
   
 /*---------------------------------------------------------------------------*/
+
+/*-------ATRIBUIÇAO E DESESTRUTURAÇAO PARA ALTERAR VARIAVIES DO OBJETO--------
+Desestruturar o permite atribuir um novo nome de variável quando extrair valores. 
+Você pode fazer isso ao colocar o novo nome após dois pontos quando atribuir o valor.*/
+
+//exemplos
+
+const usuario = { nome: 'Mark', idade: 31};
+const { nome: nomeUser, idade: idadeUSer} = usuario;//sintaxe de desestruturaçao
+  
+const { today: highToday, tomorrow: highTomorrow } = HIGH_TEMPERATURES//sintaxe de desestruturaçao  
+
+/*---------------------------------------------------------------------------*/
