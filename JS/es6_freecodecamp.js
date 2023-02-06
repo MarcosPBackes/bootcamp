@@ -83,3 +83,16 @@ const myFuncD = () => "value";
 const magicD = () => new Date();
 
 /*---------------------------------------------------------------------------*/
+
+/*-----------------------ARROW FUNCTION COM PARAMETROS-------------------------
+Assim como uma função normal, você pode passar argumentos para uma arrow function.*/
+
+//exempĺos
+
+const doubler = item => item * 2; //parametro unico
+
+const multiplier = (item, multi) => item * multi; // parametro multiplo
+multiplier(4, 2);
+
+const myConcat = (arr1, arr2) => arr1.concat(arr2); // parametro multiplo
+myConcat([1, 2], [3, 4, 5]);
