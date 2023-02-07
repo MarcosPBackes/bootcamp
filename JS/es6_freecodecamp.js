@@ -171,7 +171,36 @@ const LOCAL_FORECAST = {
   
 const { today: { low: lowToday, high: highTodaay }} = LOCAL_FORECAST
 
+/*---------------------------------------------------------------------------*/
 
+/*------ATRIBUIÇAO E DESESTRUTURAÇAO PARA VARIAVEIS A ÁRTIR DE ARRAYS--------
+ES6 torna desestruturar arrays tão fácil quanto desestruturar objetos.
+Uma diferença chave entre o operador spread (...) e a desestruturação de array 
+é que o operador spread retira todos os conteúdos de um array e coloca em uma 
+lista com elementos separados por vírgula. Consequentemente, você não pode 
+pegar ou escolher quais elementos você quer atribuir a variáveis.*/
+
+//exemplos
+
+const [x, y] = [1, 2, 3, 4, 5, 6];//x = 1 e y =2
+const [a, b,,, c] = [1, 2, 3, 4, 5, 6];// cada virgula  pula um indice do array c = 5
 
 /*---------------------------------------------------------------------------*/
 
+/*------------------DESESTRUTURAÇÃO POR MEIO DE ELEMENTOS COM REST------------
+
+Em algumas situações envolvendo um array desestruturado, podemos querer coletar
+o resto dos elementos em um array separado.*/
+
+//exemplos
+
+const [d, e, ...arr] = [1, 2, 3, 4, 5, 7];//retorna d = 1 e e = 2 e arr = [3,4,5,7]
+function removeFirstTwo(list) {
+  const [d, e, ...shorterList] = list
+  return shorterList;
+}
+
+const source = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const sourceWithoutFirstTwo = removeFirstTwo(source);//retorna sem os dois primeiros
+
+/*---------------------------------------------------------------------------*/
