@@ -299,3 +299,51 @@ const carrot = new Vegetable('carrot');
 console.log(carrot.name); //printa carrot no console
 
 /*---------------------------------------------------------------------------*/
+
+/*-----------GETTERS E SETTER PARA CONTROLAR ACESSO A UM OBJETO---------------
+Você pode obter valores de um objeto e definir o valor da propriedade 
+dentro de um objeto. Esses são classicamente chamados de getters e setters.
+Funções getter tem a finalidade de simplesmente retornar (get) o valor de uma v
+ariável privada de um objeto para o usuário sem que o usuário acesse diretamente 
+a variável privada. Funções setter tem a finalidade de modificar, ou definir (set),
+o valor de uma variável privada de um objeto baseado no valor passado dentro da 
+função setter. Essa mudança poderia envolver cálculos, ou até sobrescrever 
+completamente o valor anterior.*/
+
+//exemplos
+
+class Book {
+  constructor(author) {
+    this._author = author;
+  }
+  // getter
+  get writer() {
+    return this._author;
+  }
+  // setter
+  set writer(updatedAuthor) {
+    this._author = updatedAuthor;
+  }
+}
+const novel = new Book('anonymous');
+console.log(novel.writer);
+novel.writer = 'newAuthor';
+console.log(novel.writer);
+
+class Thermostat {
+  constructor(fahrenheit) {
+    this._fahrenheit = fahrenheit;
+  }  
+  get temperature() {
+    return (5 / 9) * (this._fahrenheit - 32);
+  }  
+  set temperature(celsius) {
+    this._fahrenheit = (celsius * 9.0) / 5 + 32;
+  }
+}
+const thermos = new Thermostat(76); //Definição na escala Fahrenheit
+let temp = thermos.temperature; //24,44 em Celsius
+thermos.temperature = 26;
+temp = thermos.temperature; //26 em Celsius
+
+/*---------------------------------------------------------------------------*/
