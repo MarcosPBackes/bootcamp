@@ -204,3 +204,22 @@ const source = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 const sourceWithoutFirstTwo = removeFirstTwo(source);//retorna sem os dois primeiros
 
 /*---------------------------------------------------------------------------*/
+
+/*---ATRIBUIÇAO E DESESTRUTURAÇAO PARA PASSAR UM OBJETO COMO PARAMETRO DE UMA FUNÇAO---
+Em alguns casos, você pode desestruturar um objeto no próprio argumento da função.
+*/
+
+//exemplo
+
+const stats = {
+  max: 56.78,
+  standard_deviation: 4.34,
+  median: 34.54,
+  mode: 23.87,
+  min: -0.75,
+  average: 35.85
+};
+const half = ({ max, min }) => (max + min) / 2.0;
+
+/*---------------------------------------------------------------------------*/
+
