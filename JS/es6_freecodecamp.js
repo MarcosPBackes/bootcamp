@@ -152,4 +152,26 @@ const { nome: nomeUser, idade: idadeUSer} = usuario;//sintaxe de desestruturaça
   
 const { today: highToday, tomorrow: highTomorrow } = HIGH_TEMPERATURES//sintaxe de desestruturaçao  
 
+//exemplo aninhado
+
+const usuarioAninhado = {
+  johnDoe: { 
+    age: 34,
+    email: 'johnDoe@freeCodeCamp.com'
+  }
+};
+
+const { johnDoe: { age: userAge, email: userEmail }} = usuarioAninhado;
+
+const LOCAL_FORECAST = {
+  yesterday: { low: 61, high: 75 },
+  today: { low: 64, high: 77 },
+  tomorrow: { low: 68, high: 80 }
+};
+  
+const { today: { low: lowToday, high: highTodaay }} = LOCAL_FORECAST
+
+
+
 /*---------------------------------------------------------------------------*/
+
