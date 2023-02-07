@@ -223,3 +223,79 @@ const half = ({ max, min }) => (max + min) / 2.0;
 
 /*---------------------------------------------------------------------------*/
 
+/*---------------------CRIAR STRINGS USANDO TEMPLATE LITERAL------------------
+Um novo recurso introduzido na versão ES6 é o template literal. Esse é um tipo 
+especial de string que torna mais fácil a criação de strings complexas.
+Template literals nos permitem criar strings de mais de uma linha e usar os 
+recursos de interpolação de strings.*/
+
+//exemplos
+
+const person = {
+  name: "Zodiac Hasbro",
+  age: 56
+};
+const greeting = `Hello, my name is ${person.name}!
+I am ${person.age} years old.`;
+
+const result = {
+  success: ["max-length", "no-amd", "prefer-arrow-functions"],
+  failure: ["no-var", "var-on-top", "linebreak"],
+  skipped: ["no-extra-semi", "no-dup-keys"]
+};
+function makeList(arr) {
+  const failureItems = [];
+  for (let i = 0; i < arr.length; i++) {
+    failureItems.push(`<li class="text-warning">${arr[i]}</li>`)
+  }
+  return failureItems;
+}
+const failuresList = makeList(result.failure);
+
+/*---------------------------------------------------------------------------*/
+
+/*-----------------SINTAXE DE CLASSE PARA FUNÇAO CONSTRUTORA------------------
+ES6 fornece uma nova sintaxe para criar objetos, usando a palavra-chave class.
+No ES5, um objeto pode ser criado definindo uma função constructor e usando a 
+palavra-chave new para instanciar o objeto. No ES6, uma declaração de class 
+tem um método constructor, que é invocado com a palavra-chave new. Se o método 
+constructor não for explicitamente definido, ele será definido implicitamente 
+sem argumentos.*/
+
+//exemplos
+
+//construtor explicito
+class SpaceShuttle {
+  constructor(targetPlanet) {
+    this.targetPlanet = targetPlanet;
+  }
+  takeOff() {
+    console.log("To " + this.targetPlanet + "!");
+  }
+}
+
+// construtor implicito
+class Rocket {
+  launch() {
+    console.log("To the moon!");
+  }
+}
+
+const zeus = new SpaceShuttle('Jupiter');
+//printa To Jupiter! no console
+zeus.takeOff();
+
+const atlas = new Rocket();
+//printa To the moon! no console
+atlas.launch();
+
+class Vegetable {
+  constructor(name) {
+    this.name = name
+    return this.name
+  }
+}
+const carrot = new Vegetable('carrot');
+console.log(carrot.name); //printa carrot no console
+
+/*---------------------------------------------------------------------------*/
