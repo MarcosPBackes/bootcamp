@@ -118,3 +118,20 @@ let vowelRegex = /[aeiou]/gi; //busca multiplos caracteres com flags
 let resultVowel = quoteSample.match(vowelRegex);
 
 /*---------------------------------------------------------------------------*/
+
+/*-----------------------CAPTURAR LETRAS DO ALFABETO-------------------------
+Você viu como pode usar conjuntos de caracteres para especificar um grupo de 
+caracteres para capturar. Mas você precisaria escrever muito para definir uma 
+classe larga como, por exemplo, para capturar todas as letras do alfabeto. 
+Felizmente há uma maneira de fazer com que elas fiquem pequenas e simples.
+Você pode usar um hífen (-) para definir um intervalo de caracteres para 
+capturar dentro de uma classe.*/
+
+//exemplo
+
+let alphaSample = "The quick brown fox jumps over the lazy dog.";
+let alphabetRegex = /[a-z]/gi; 
+let alphaResult = alphaSample.match(alphabetRegex);
+
+/*---------------------------------------------------------------------------*/
+
