@@ -149,3 +149,22 @@ let betaRegex = /[h-s2-6]/gi;
 let betaResult = betaSample.match(betaRegex);
 
 /*---------------------------------------------------------------------------*/
+
+/*-------------------CAPTURAR CARACTERES NAO ESPECIFICADOS---------------------
+Até agora você aprendeu a criar classes de caracteres para capturar caracteres 
+específicos, mas você também pode usá-las para capturar caracteres ausentes nelas.
+Esse tipo de classe de caracteres é chamada classe de caracteres negada.
+Para criar uma classe de caracteres negada, você só precisa colocar um acento 
+circunflexo (^) depois do colchete de abertura e à esquerda dos caracteres que 
+você quer evitar. Por exemplo, /[^aeiou]/gi encontra todos os caracteres que 
+não são vogais. Observe que caracteres como ., !, [, @, / e espaços em branco 
+são capturados - a classe de vogais negada apenas exclui os caracteres que 
+são vogais.*/
+
+//exemplo
+
+let gamaSample = "3 blind mice.";
+let gamaRegex = /[^aeiou0-9]/gi; //ignora os caraceteres especificado
+let gamaresult = gamaSample.match(gamaRegex);
+
+/*---------------------------------------------------------------------------*/
