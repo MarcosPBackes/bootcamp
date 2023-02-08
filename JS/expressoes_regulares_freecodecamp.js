@@ -135,3 +135,17 @@ let alphaResult = alphaSample.match(alphabetRegex);
 
 /*---------------------------------------------------------------------------*/
 
+/*------------------CAPTURAR NUMEROS E LETRAS DO ALFABETO---------------------
+O uso do hífen (-) para capturar um intervalo de caracteres não é limitado a 
+letras. Ele também funciona para capturar intervalos de números.
+Por exemplo, /[0-5]/ encontra qualquer número entre 0 e 5, incluindo ambos 0 e 5.
+E também é possível combinar intervalos de letras e números em uma 
+única classe de caracteres.*/
+
+//exemplo
+
+let betaSample = "Blueberry 3.141592653s are delicious.";
+let betaRegex = /[h-s2-6]/gi;
+let betaResult = betaSample.match(betaRegex);
+
+/*---------------------------------------------------------------------------*/
