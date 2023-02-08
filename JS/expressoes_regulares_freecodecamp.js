@@ -35,7 +35,40 @@ seguido do padrão desejado: /yes|no|maybe/.*/
 //exemplo
 
 let petString = "James has a pet cat.";
-let petRegex = /dog|cat|bird|fish/; // Altere esta linha
+let petRegex = /dog|cat|bird|fish/;
 let resposta = petRegex.test(petString);
+
+/*---------------------------------------------------------------------------*/
+
+/*-----------------IGNORAR MAIUSCULAS E MINISCULAS AO BUSCAR-------------------
+Até agora você escreveu regexes para encontrar strings literais. Mas, às vezes, 
+você pode querer encontrar caixas diferentes. Caixa (-alta ou -baixa) é a 
+diferença entre letras maiúsculas e minúsculas. São exemplos de caixa alta: 
+A, B e C. a, b e c são exemplos de caixa baixa. Você pode encontrar ambas as 
+caixas usando algo que chamamos de flag. Existem várias flags, mas agora nós 
+queremos a flag que ignora a caixa - a flag i. Para usá-la é só colocar ao 
+fim da regex. Por exemplo, escrever /ignorecase/i é uma forma. Essa regex 
+pode encontrar as strings ignorecase, igNoreCase e IgnoreCase (e todas as outras
+combinações de maiúsculas e minúsculas).*/
+
+//exemplos
+
+let theString = "freeCodeCamp";
+let fccRegex = /freeCodeCamp/i; 
+let theResult = fccRegex.test(theString);
+
+/*---------------------------------------------------------------------------*/
+
+/*-----------------------------EXTRAIR  RESULTADS-----------------------------
+Até agora, você só tem verificado se existe ou não um padrão dentro de uma 
+string. Você também pode extrair os resultados encontrados por meio do método
+.match(). Para usar o método .match(), aplique o método em uma string e passe
+a regex dentro dos parênteses.*/
+
+//exemplo
+
+let extractStr = "Extract the word 'coding' from this string.";
+let codingRegex = /coding/;
+let resultCoding = extractStr.match(codingRegex);
 
 /*---------------------------------------------------------------------------*/
