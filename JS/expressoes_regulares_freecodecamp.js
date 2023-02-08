@@ -59,7 +59,7 @@ let theResult = fccRegex.test(theString);
 
 /*---------------------------------------------------------------------------*/
 
-/*-----------------------------EXTRAIR  RESULTADS-----------------------------
+/*-----------------------------EXTRAIR  RESULTADOS-----------------------------
 Até agora, você só tem verificado se existe ou não um padrão dentro de uma 
 string. Você também pode extrair os resultados encontrados por meio do método
 .match(). Para usar o método .match(), aplique o método em uma string e passe
@@ -70,5 +70,17 @@ a regex dentro dos parênteses.*/
 let extractStr = "Extract the word 'coding' from this string.";
 let codingRegex = /coding/;
 let resultCoding = extractStr.match(codingRegex);
+
+/*---------------------------------------------------------------------------*/
+
+/*-----------------ENCONTRAR MAIS QUE O PRIMEIRO RESULTADO--------------------
+Para buscar ou extrair um padrão além do primeiro resultado, você pode usar a 
+flag de busca global g. você pode usar múltiplas flags em uma regex: /search/gi*/
+
+//exemplo
+
+let twinkleStar = "Twinkle, twinkle, little star";
+let starRegex = /twinkle/gi; //multiplas flags g = multipla busca i = ignorecase
+let startResult = twinkleStar.match(starRegex);
 
 /*---------------------------------------------------------------------------*/
