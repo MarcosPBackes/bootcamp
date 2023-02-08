@@ -91,4 +91,30 @@ exatamente farão parte das suas regexes. Pensar em todas as palavras que
 capturariam, digamos, um erro ortográfico levaria muito tempo. Por sorte, 
 você pode economizar tempo usando o caractere curinga: . O caractere curinga . 
 captura qualquer caractere. O curinga também pode ser chamado de ponto. 
-Você pode usar o curinga como qualquer outro caractere na regex. Por exemplo, e você quiser encontrar hug, huh, hut ou hum, você pode usar a regex /hu./ para capturar todas as quatro palavras.
+Você pode usar o curinga como qualquer outro caractere na regex. Por exemplo, 
+se você quiser encontrar hug, huh, hut ou hum, você pode usar a regex /hu./ 
+para capturar todas as quatro palavras.*/
+
+//exemplo
+
+let exampleStr = "Let's have fun with regular expressions!";
+let unRegex = /.un/; // . caractere curinga
+let resultUn = unRegex.test(exampleStr);
+
+/*---------------------------------------------------------------------------*/
+
+/*--------CAPTURAR UM UNICO CARACTERE COM MULTIPLAS POSSIBILIDADES-------------
+Você aprendeu a capturar padrões literais (/literal/) e usar o caractere curinga 
+(/./). Eles são os extremos das expressões regulares: um encontra o texto exato 
+e o outro captura qualquer coisa. Existem formas de balancear esses extremos.
+Você pode ter alguma flexibilidade ao procurar um padrão literal usando classes
+de caracteres. Classes de caracteres permitem a definição de grupos de caracteres 
+que você quer capturar ao colocá-los entre colchetes: [ e ].*/
+
+//exemplo 
+
+let quoteSample = "Beware of bugs in the above code; I have only proved it correct, not tried it.";
+let vowelRegex = /[aeiou]/gi; //busca multiplos caracteres com flags
+let resultVowel = quoteSample.match(vowelRegex);
+
+/*---------------------------------------------------------------------------*/
