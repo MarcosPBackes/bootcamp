@@ -268,3 +268,32 @@ let nonAlphabetRegex = /\W/g;
 let deltaResult = deltaSample.match(nonAlphabetRegex).length;
 
 /*---------------------------------------------------------------------------*/
+
+/*------------------------CAPTURAR TODOS OS NUMEROS---------------------------
+Você aprendeu atalhos para padrões comuns de strings como alfanuméricos. Outro 
+padrão comum é o de apenas dígitos ou números. O atalho para procurar caracteres 
+numéricos é \d, com um d minúsculo. Esse atalho é o mesmo que [0-9], que serve 
+para procurar qualquer dígito de zero a nove.*/
+
+//exemplo
+
+let movieName = "2001: A Space Odyssey";
+let movieRegex = /\d/g;
+let movieResult = movieName.match(movieRegex).length;
+
+/*---------------------------------------------------------------------------*/
+
+/*-----------------------CAPTURAR TUDO EXCETO NUMEROS------------------------
+O último desafio mostrou como procurar dígitos usando o atalho \d com um d 
+minúsculo. Você também pode procurar não dígitos usando um atalho semelhante 
+que usa um D maiúsculo. O atalho para procurar não dígitos é \D. Esse atalho 
+é o mesmo que [^0-9], que serve para procurar qualquer caractere que não 
+seja um dígito de zero a nove.*/
+
+//exemplo
+
+let movieNumName = "2001: A Space Odyssey";
+let noNumRegex = /\D/g;
+let noNunResult = movieNumName.match(noNumRegex).length;
+
+/*---------------------------------------------------------------------------*/
