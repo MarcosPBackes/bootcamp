@@ -417,3 +417,25 @@ let haRegex = /Haz{4,}ah/;
 let haResult = haRegex.test(haStr);
 
 /*---------------------------------------------------------------------------*/
+
+/*-----------------ESPECIFICAR O NUMERO EXATO DE CAPTURAS----------------------
+Você pode especificar um número mínimo e um máximo de capturas com chaves. Às vezes,
+você só quer um número específico de capturas.Para especificar este número, apenas 
+escreva-o dentro das chaves.
+
+Por exemplo, você pode escrever a regex /ha{3}h/ para capturar a 
+letra a 3 vezes na string hah.*/
+
+let A6 = "haaaah";
+let A7 = "haaah";
+let Aa100 = "h" + "a".repeat(100) + "h";
+let multipleHA = /ha{3}h/;
+multipleHA.test(A6);//Retorna false
+multipleHA.test(A7);//Retorna true
+multipleHA.test(Aa100);//Retorna false
+
+let timStr = "Timmmmber";
+let timRegex = /Tim{4}ber/;//Captura 4 m's na string
+let timResult = timRegex.test(timStr);
+
+/*---------------------------------------------------------------------------*/
