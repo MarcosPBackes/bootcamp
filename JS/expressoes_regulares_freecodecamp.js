@@ -351,3 +351,21 @@ let spaceResult = sample.match(countWhiteSpace);
 
 /*---------------------------------------------------------------------------*/
 
+/*------------------CAPTURAR CARACTERES ALEM DO ESPAÇO-------------------------
+Você aprendeu a procurar por espaço em branco usando \s com um s minúsculo. Você 
+também pode buscar tudo exceto espaços em branco. Busque não espaços em branco 
+usando \S com um s maiúsculo. Este atalho não captura espaços em branco, retorno 
+de carro, tabulações, feeds de formulário ou quebras de linha. O atalho é 
+equivalente à classe de caracteres [^ \r\t\f\n\v].*/
+
+//exemplos
+
+let blackSpace = "Whitespace. Whitespace everywhere!"
+let nonSpaceRegex = /\S/g;
+blackSpace.match(nonSpaceRegex).length;//Retorna 32
+
+let blackSample = "Whitespace is important in separating words";
+let countNonWhiteSpace = /\S/g;
+let blackResult = sample.match(countNonWhiteSpace);
+
+/*---------------------------------------------------------------------------*/
