@@ -168,3 +168,34 @@ let gamaRegex = /[^aeiou0-9]/gi; //ignora os caraceteres especificado
 let gamaresult = gamaSample.match(gamaRegex);
 
 /*---------------------------------------------------------------------------*/
+
+/*-------CAPTURAR CARACTERES QUE APARECEM UMA OU MAIS VEZES SEGUIDAS-----------
+Às vezes você precisa capturar um caractere, ou grupo de caracteres, que aparece 
+uma ou mais vezes seguidas. Ou seja, que aparecem pelo menos uma vez e podem se 
+repetir. Você pode usar o caractere + para verificar se é o caso. Lembre-se que 
+o caractere ou padrão precisa repetir-se consecutivamente. Ou seja, um atrás do 
+outro. Por exemplo, /a+/g encontra um resultado na string abc e retorna ["a"]. 
+Mas o + também faz com que encontre um único resultado em aabc e retorne ["aa"].
+Se a string fosse abab, a operação retornaria ["a", "a"] porque entre os dois a 
+há um b. Por fim, se não houvesse nenhum a na string, como em bcd, nada seria 
+encontrado.*/
+
+//exemplo
+
+let difficultSpelling = "Mississippi";
+let difficultRegex = /s+/gi;
+let difficultResult = difficultSpelling.match(difficultRegex);
+
+/*---------------------------------------------------------------------------*/
+
+/*------------CAPTURAR CARACTERES E ESTRUTURAS ZERO OU MAIS VEZES--------------
+O último desafio fez uso do caractere + para buscar caracteres que ocorrem uma 
+ou mais vezes. Existe um outro caractere que permite buscar zero ou mais 
+ocorrências de um padrão.O caractere usado para isso é o asterisco: *.*/
+
+//exemplo
+let chewieQuote = 'Aaaaaaaaaaaaaaaarrrgh!'
+let chewieRegex = /Aa*/;
+let chewiResult = chewieQuote.match(chewieRegex);
+
+/*---------------------------------------------------------------------------*/
