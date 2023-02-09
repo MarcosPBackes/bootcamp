@@ -248,3 +248,23 @@ let alphabetRegexV2 = /\w/g;
 let alphabetResult = alphabetSample.match(alphabetRegexV2).length;
 
 /*---------------------------------------------------------------------------*/
+
+/*------------------CAPTURAR TUDO EXCETO LETRAS E NUMEROS---------------------
+Você aprendeu que você pode usar um atalho para capturar alfanuméricos [A-Za-z0-9_]
+usando \w. Você pode querer capturar exatamente o oposto disso. Você pode capturar 
+não alfanuméricos usando \W ao invés de \w. Observe que o atalho usa uma maiúscula. 
+Este atalho é o mesmo que escrever [^A-Za-z0-9_].*/
+
+//exemplos
+
+let shortAlphaHand = /\W/;
+let alphaNumbers = "42%";
+let sentence = "Coding!";
+numbers.match(shortAlphaHand);//retorna ["%"]
+sentence.match(shortAlphaHand);//retorna ["!"]
+
+let deltaSample = "The five boxing wizards jump quickly.";
+let nonAlphabetRegex = /\W/g;
+let deltaResult = deltaSample.match(nonAlphabetRegex).length;
+
+/*---------------------------------------------------------------------------*/
