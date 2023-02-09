@@ -297,3 +297,36 @@ let noNumRegex = /\D/g;
 let noNunResult = movieNumName.match(noNumRegex).length;
 
 /*---------------------------------------------------------------------------*/
+
+/*-------------------RESTRINGIR NOMES DE USUARIO POSSIVEIS---------------------
+Nomes de usuário (usernames) são usados em toda a Internet. São o que fazem com 
+que tenham uma identidade única em seus sites favoritos. Você precisa verificar 
+todos os usernames em um banco de dados. Existem algumas regras que os usuários 
+precisam seguir quando criam os seus usernames.*/
+
+//desafio
+
+//1.Nomes de usuário só podem conter caracteres alfanuméricos.
+//2.Os números, se algum, precisam estar no fim da string. 
+//Pode haver zero ou mais números. Usernames não podem começar com números.
+//3.As letras podem ser maiúsculas ou minúsculas.
+//4.O tamanho de nomes de usuários precisa ser pelo menos dois. 
+//Um username de dois caracteres só pode conter letras.
+
+let username = "JackOfAllTrades";
+let userCheck = /^[a-z][a-z]+\d*$|^[a-z]\d\d+$/i;
+let userResult = userCheck.test(username);
+
+//explicaçao userCheck
+
+// ^ - Começo da entrada
+// [a-z] - Primeiro caractere e uma letra
+// [a-z]+ - Proximo caractere tambem e uma letra
+// \d*$ - Entrada termina com 0 ou mais digitos
+// | - ou
+// ^[a-z] - Primeiro caractere e uma letra
+// \d\d+ - proximo caracteres sao dois ou mais digitos
+// $ - Fim da entrada
+// i - Ignorar caixa alta
+
+/*---------------------------------------------------------------------------*/
