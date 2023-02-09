@@ -330,3 +330,24 @@ let userResult = userCheck.test(username);
 // i - Ignorar caixa alta
 
 /*---------------------------------------------------------------------------*/
+
+/*-------------------------CAPTURAR ESPAÇOS EM BRANCO-------------------------
+Os desafios até agora cobriram a captura de letras do alfabeto e números. 
+Você também pode capturar espaços em branco e os espaços entre as letras.
+Você pode usar o atalho \s com um s minúsculo para capturar espaços em branco. 
+Este atalho não captura apenas espaços em branco como também retorno de carro, 
+tabulações, feeds de formulário e quebras de linha. O atalho é equivalente à 
+classe de caracteres [ \r\t\f\n\v].*/
+
+//exmplos
+
+let whiteSpace = "Whitespace. Whitespace everywhere!"
+let spaceRegex = /\s/g;
+whiteSpace.match(spaceRegex);//Retorna [" ", " "]
+
+let sample = "Whitespace is important in separating words";
+let countWhiteSpace = /\s/g;
+let spaceResult = sample.match(countWhiteSpace);
+
+/*---------------------------------------------------------------------------*/
+
