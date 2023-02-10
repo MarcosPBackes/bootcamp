@@ -498,3 +498,24 @@ let pwRegex = /(?=\w{6})(?=\w*\d{2})/;
 let pwResult = pwRegex.test(sampleWord);
 
 /*---------------------------------------------------------------------------*/
+
+/*--------------------VALIDAR GRUPOS MISTOS DE CARACTERES---------------------
+Há vezes em que queremos validar grupos de caracteres em uma expressão regular. 
+É possível fazê-lo usando parênteses: (). Você pode usar a expressão regular 
+/P(engu|umpk)in/g para encontrar tanto Penguin quanto Pumpkin em uma string.
+Depois é só usar o método test() para verificar se os grupos estão presentes 
+na string.*/
+
+let pumpkinStr = "Pumpkin";
+let pumpkinRegex = /P(engu|umpk)in/;
+pumpkinRegex.test(pumpkinStr);
+
+/*Corrija a regex para que ela valide os nomes Franklin Roosevelt e 
+Eleanor Roosevelt levando em conta maiúsculas e minúsculas. A regex 
+também deve permitir nomes do meio.*/
+
+let rooseveltString = "Eleanor Roosevelt";
+let rooseveltRegex = /(Franklin|Eleanor) (([A-Z]\.?|[A-Z][a-z]+) )?Roosevelt/;
+let rooseveltResult = myRegex.test(rooseveltString);
+
+/*---------------------------------------------------------------------------*/
