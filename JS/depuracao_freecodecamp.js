@@ -49,3 +49,32 @@ console.log(typeof seven);//Number
 console.log(typeof three);//String
 
 /*---------------------------------------------------------------------------*/
+
+/*--CAPTURAR ABERTURA E FECHAMENTO D E PARENTESES FALTANTES APOS UMA CHAMADA DE FUNÇAO--
+Quando uma função ou método não recebe nenhum parâmetro, você pode esquecer de incluir 
+a abertura e fechamento de parênteses (vazio) ao chamá-la. Frequentemente, o resultado 
+de uma chamada de função é salva em uma variável para outro uso em seu código. 
+Esse erro pode ser detectado ao exibir no console os valores das variáveis (
+ou seus tipos) e verificar que uma variável está definida para uma referência 
+de uma função, ao invés do valor esperado que a função retorna.*/
+
+//As variáveis no seguinte exemplo são diferentes:
+
+//exemplos
+
+function myFunction() {
+    return "You rock!";
+}
+let varOne = myFunction;//Recebe funçao myFunction
+let varTwo = myFunction();//Recebe a string You rock!
+
+function getNine() {
+    let x = 6;
+    let y = 3;
+    return x + y;
+  }
+  let func = getNine;//Recebe funçao getNine
+  let result = getNine();//Recebe soma de x e y = 9
+  console.log(result);
+
+  /*---------------------------------------------------------------------------*/
