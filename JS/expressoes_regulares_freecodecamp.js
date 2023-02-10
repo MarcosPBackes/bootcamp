@@ -581,3 +581,14 @@ let fixResult = str.replace(fixRegex, replaceText);
 
 /*---------------------------------------------------------------------------*/
 
+/*------------REMOVER ESPAÇOS EM BRANCO DO INICIO E DO FIM DE STRINGS---------
+Às vezes, strings têm espaços em branco indesejados em seus inícios e fins. 
+Uma operação muito comum de strings é remover esses espaços ao redor delas.*/
+let hello = "   Hello, World!  ";
+let wsRegex = /^\s+|\s+$/g; //remove os espaços em branco do começo e do fim delas.
+let wsResult = hello.replace(wsRegex, "");//remove os espaços em branco do começo e do fim delas.
+
+//Observação: normalmente, usaríamos String.prototype.trim() para isso, 
+//mas e possivel fazer usando expressões regulares.
+
+/*---------------------------------------------------------------------------*/
