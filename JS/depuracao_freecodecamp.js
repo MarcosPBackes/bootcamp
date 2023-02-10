@@ -100,3 +100,28 @@ let power = raiseToPower(base, exp);
 console.log(power);
 
 /*---------------------------------------------------------------------------*/
+
+/*-----PREVENIR LAÇOS INFINITOS COM UMA CONDIÇAO DE TEERMINO VALIDA-----------
+O tópico final é o temido laço infinito. Laços são ótimas ferramentas quando 
+você precisa que o seu programa rode um bloco de código uma quantidade exata 
+de vezes ou até que uma condição seja atendida, mas eles precisam de uma 
+condição de parada que finalize esse laço. Laços infinitos têm alta probabilidade 
+de congelar ou travar o navegador, e causa um caos na execução geral do programa, 
+o que ninguém deseja. Havia um exemplo de laço infinito na introdução dessa seção 
+- esse laço não tinha uma condição de parada para sair do laço while dentro de
+loopy(). NÃO chame essa função!*/
+
+function loopy() {
+    while(true) {
+      console.log("Hello, world!");
+    break//Adicionado break para evitar acidentes
+    }
+}
+
+/*É trabalho do programador garantir que a condição de parada, a qual avisa ao 
+programa quando sair de um laço, seja eventualmente alcançada. Um erro é incrementar 
+ou decrementar uma variável contadora na direção errada da condição de parada. 
+Outro erro é acidentalmente reiniciar uma variável contadora ou de índice dentro do 
+laço, ao invés de incrementar ou decrementar.*/
+
+/*---------------------------------------------------------------------------*/
