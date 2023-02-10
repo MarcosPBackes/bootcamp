@@ -50,7 +50,7 @@ console.log(typeof three);//String
 
 /*---------------------------------------------------------------------------*/
 
-/*--CAPTURAR ABERTURA E FECHAMENTO D E PARENTESES FALTANTES APOS UMA CHAMADA DE FUNÇAO--
+/*--CAPTURAR ABERTURA E FECHAMENTO DE PARENTESES FALTANTES APOS UMA CHAMADA DE FUNÇAO--
 Quando uma função ou método não recebe nenhum parâmetro, você pode esquecer de incluir 
 a abertura e fechamento de parênteses (vazio) ao chamá-la. Frequentemente, o resultado 
 de uma chamada de função é salva em uma variável para outro uso em seu código. 
@@ -72,9 +72,31 @@ function getNine() {
     let x = 6;
     let y = 3;
     return x + y;
-  }
-  let func = getNine;//Recebe funçao getNine
-  let result = getNine();//Recebe soma de x e y = 9
-  console.log(result);
+}
+let func = getNine;//Recebe funçao getNine
+let result = getNine();//Recebe soma de x e y = 9
+console.log(result);
 
-  /*---------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------*/
+
+/*-------CAPTURAR ARGUMENTOS PASSADOS NA ORDEM ERRADA AO CHAMR UMA FUNÇAO------
+Continuando a discussão sobre chamada de funções, o próximo bug para prestar 
+atenção é quando os argumentos de uma função são fornecidos na ordem incorreta. 
+Se os argumentos forem de diferentes tipos, tal como uma função esperando um 
+array e um inteiro, isso provavelmente lançará um erro de tempo de execução. 
+Se os argumentos são do mesmo tipo (todos os inteiros, por exemplo), então a 
+lógica do código não fará sentido. Certifique-se de fornecer todos os argumentos 
+exigidos, na ordem adequada para evitar esses problemas.*/
+
+//exemplo
+
+function raiseToPower(b, e) {
+return Math.pow(b, e);
+}
+let base = 2;
+let exp = 3;
+let power = raiseToPower(base, exp);
+//let power = raiseToPower(exp, base);
+console.log(power);
+
+/*---------------------------------------------------------------------------*/
