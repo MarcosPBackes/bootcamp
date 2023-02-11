@@ -131,3 +131,27 @@ arr.splice(1, 4)//começa pelo ondice 1 e termina apos 4 indices
 console.log(arr);
 
 /*---------------------------------------------------------------------------*/
+
+/*----------------ADICIONAR ITENS USANDO SPLICE-------------------------------
+ocê se lembra de quando mencionamos no último desafio que splice() pode receber 
+até três parâmetros? Bem, você pode usar o terceiro parâmetro, composto por um 
+ou mais elementos, para adicionar algo ao array. Isso pode ser incrivelmente 
+útil para mudar rapidamente de um elemento, ou um conjunto de elementos, para outro.*/
+
+//exemplos
+
+const numbers = [10, 11, 12, 12, 15];
+const startIndex = 3;
+const amountToDelete = 1;
+
+numbers.splice(startIndex, amountToDelete, 13, 14);
+console.log(numbers);
+
+function htmlColorNames(arr) {
+  arr.splice(0, 2, 'DarkSalmom', 'BlanchedAlmond')
+  return arr;
+}
+console.log(htmlColorNames(['DarkGoldenRod', 'WhiteSmoke', 'LavenderBlush', 
+    'PaleTurquoise', 'FireBrick']));
+
+/*---------------------------------------------------------------------------*/
