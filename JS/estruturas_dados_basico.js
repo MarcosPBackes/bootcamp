@@ -82,13 +82,31 @@ e unshift() adiciona ao início.*/
 
 //exemplo
 
-function mixedNumbers(arr) {
-    // Altere apenas o código abaixo desta linha
+function mixedNumbers(arr) {    
     arr.unshift('I', 2, 'three');
-    arr.push(7, 'VIII', 9);
-    // Altere apenas o código acima desta linha
+    arr.push(7, 'VIII', 9);    
     return(arr);
   }  
   console.log(mixedNumbers(['IV', 5, 'six']));
 
-  /*---------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------*/
+
+/*------------------REMOVER ITENS DE UM ARRAY COM POP() E SHIFT()---------------
+Tanto push() e unshift() possuem métodos correspondentes que são quase opostos 
+funcionais: pop() e shift(). Como você já pode ter adivinhado, em vez de adicionar, 
+pop() remove um elemento do fim de um array, enquanto shift() remove um elemento do 
+início. A diferença chave entre pop() e shift() e seus primos push() e unshift(), 
+é que nenhum dos métodos recebe parâmetros. Cada um deles só permite que seja 
+modificado um elemento por vez em um array*/
+
+//exemplo
+
+function popShift(arr) {
+  let popped = arr.pop(); 
+  let shifted = arr.shift(); 
+  return [shifted, popped];
+}
+
+console.log(popShift(['challenge', 'is', 'not', 'complete']));//Retorna ['challenge', 'complete']
+
+/*---------------------------------------------------------------------------*/
