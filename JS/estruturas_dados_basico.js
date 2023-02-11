@@ -68,3 +68,27 @@ console.log(myArray[2]);
 console.log(myArray[3]);
 
 /*---------------------------------------------------------------------------*/
+
+/*-------ADICIONAR ITENS EM UM ARRAY COM PUSH() E UNSHIFT()-------------------
+O comprimento de um array, como os tipos de dados que pode conter, não são 
+fixos. Arrays podem ser definidos com um comprimento de qualquer número de 
+elementos e elementos podem ser adicionados e removidos com o passar do tempo. 
+Em outras palavras, arrays são mutáveis. Nesse desafio, examinaremos dois métodos 
+com os quais podemos modificar programaticamente um array: 
+Array.push() e Array.unshift(). Ambos os métodos recebem 1 ou mais elementos 
+como parâmetros e adicionam esses elementos ao array no qual o método está sendo 
+chamado; o método push() adiciona elementos ao final do array, 
+e unshift() adiciona ao início.*/
+
+//exemplo
+
+function mixedNumbers(arr) {
+    // Altere apenas o código abaixo desta linha
+    arr.unshift('I', 2, 'three');
+    arr.push(7, 'VIII', 9);
+    // Altere apenas o código acima desta linha
+    return(arr);
+  }  
+  console.log(mixedNumbers(['IV', 5, 'six']));
+
+  /*---------------------------------------------------------------------------*/
