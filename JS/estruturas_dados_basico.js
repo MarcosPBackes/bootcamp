@@ -564,3 +564,35 @@ function isEveryoneHereDois(userObj) {
 console.log(isEveryoneHere(users));
 
 /*---------------------------------------------------------------------------*/
+
+/*------ITERAR ATRAVES DE ESTRUTURAS DE DADOS COM DECLARAÇAO FOR...IN----------
+Às vezes, você pode precisar iterar através de todas as chaves dentro de um objeto. 
+Isso requer uma sintaxe específica no JavaScript chamada de declaração for...in*/
+
+//exemplo
+
+const usersDois = {
+  Alan: {
+    online: false
+  },
+  Jeff: {
+    online: true
+  },
+  Sarah: {
+    online: false
+  }
+}
+
+function countOnline(usersObj) {
+  let result = 0;
+  for (let user in usersObj) {
+    if (usersObj[user].online === true) {
+      result++;
+    }
+  }
+  return result;
+}
+
+console.log(countOnline(usersDois));
+
+/*---------------------------------------------------------------------------*/
