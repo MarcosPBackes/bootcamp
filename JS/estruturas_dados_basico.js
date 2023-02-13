@@ -208,3 +208,25 @@ function copyMachine(arr, num) {
 console.log(copyMachine([true, false, true], 2));
 
 /*---------------------------------------------------------------------------*/
+
+/*-----------------COMBINAR ARRAYS COM O OPERADOR SPREAD----------------------
+Outra grande vantagem do operador spread é a capacidade de combinar arrays,
+ou de inserir todos os elementos de um array em outro, em qualquer índice. 
+Com sintaxe mais tradicional, podemos concatenar arrays, mas isso só nos 
+permite combinar arrays no final de um e no início de outro. A sintaxe do 
+spread torna a seguinte operação extremamente simples:*/
+
+//exemplos
+
+let meuArray = ['sage', 'rosemary', 'parsley', 'thyme'];
+let nossoArray = ['basil', 'cilantro', ...meuArray, 'coriander'];
+
+function spreadOut() {
+  let fragment = ['to', 'code'];
+  let sentence = ['learning', ...fragment, 'is',  'fun']
+  return sentence;
+}
+
+console.log(spreadOut());
+
+/*---------------------------------------------------------------------------*/
