@@ -486,4 +486,33 @@ function checkInventory(scannedItem) {
 
 console.log(checkInventory("apples"));
 
-/*---------------------------------------------------------------------------*/ 
+/*---------------------------------------------------------------------------*/
+
+/*------USAR PALAVRA-CHAVE DELETE PARA REMOVER PROPRIEDADES DE OBJETOS--------
+Agora você sabe o que são objetos, seus recursos básicos e suas vantagens. 
+Resumindo, ele são uma forma de armazenar chave-valor que provê uma forma 
+flexível e intuitiva de estruturar dados, e, eles fornecem um desempenho 
+rápido para acessá-los. Ao longo do resto destes desafios, descreveremos 
+diversas operações que você pode executar em objetos, com a finalidade de 
+torná-lo confortável ao usar essas estruturas de dados úteis em seus programas.
+Nos desafios anteriores, nós adicionamos e modificamos os pares de chave-valor 
+de objetos. Aqui veremos como podemos remover uma chave-valor de um obeto.*/
+
+//exemplo
+
+let foodsDois = {
+  apples: 25,
+  oranges: 32,
+  plums: 28,
+  bananas: 13,
+  grapes: 35,
+  strawberries: 27
+};
+
+delete foodsDois.oranges;
+delete foodsDois.plums;
+delete foodsDois.strawberries
+
+console.log(foodsDois);
+
+/*---------------------------------------------------------------------------*/
