@@ -403,3 +403,50 @@ foods['strawberries'] = 27;
 console.log(foods);
 
 /*---------------------------------------------------------------------------*/
+
+/*------------MODIFICAR UM OBJETO ANINHADO DENTRO DE UM OBJETO----------------
+Agora vamos dar uma olhada em um objeto ligeiramente mais complexo. Propriedades 
+de objeto podem ser aninhadas para uma profundidade arbitrária e os seus valores 
+podem ser de qualquer tipo de dado suportado pelo JavaScript, incluindo arrays e 
+até mesmo objetos.*/
+
+let nestedObject = {
+  id: 28802695164,
+  date: 'December 31, 2016',
+  data: {
+    totalUsers: 99,
+    online: 80,
+    onlineStatus: {
+      active: 67,
+      away: 13,
+      busy: 8
+    }
+  }
+};
+
+/*nestedObject possui três propriedades: id (o valor é um número), date (o valor é 
+  uma string) e data(o valor é um objeto com sua estrutura aninhada). Enquanto 
+  estruturas podem se tornar rapidamente complexas, nós ainda podemos usar as 
+  mesmas notações para acessar as informações que precisamos. Para atribuir o 
+  valor 10 para a propriedade busy do objeto aninhado onlineStatus, nós usamos 
+  a notação de ponto para referenciar a propriedade:*/
+
+  nestedObject.data.onlineStatus.busy = 10;
+
+  //exemplo
+
+  let userActivity = {
+    id: 23894201352,
+    date: 'January 1, 2017',
+    data: {
+      totalUsers: 51,
+      online: 42
+    }
+  };  
+
+  userActivity.data.online = 45
+  
+  console.log(userActivity);
+
+/*---------------------------------------------------------------------------*/
+
