@@ -596,3 +596,38 @@ function countOnline(usersObj) {
 console.log(countOnline(usersDois));
 
 /*---------------------------------------------------------------------------*/
+
+/*-------GERAR UM ARRAY DE TODAS AS CHAVES DE OBJETO COM OBJECT.KEYS-----------
+Também podemos gerar um array o qual contém todas as chaves armazenadas em um 
+objeto com o método Object.keys(). Esse método recebe um objeto como argumento 
+e retorna um array de strings que representam cada propriedade no objeto. 
+Novamente, não haverá uma ordem específica para as entradas no array.*/
+
+//exemplo
+
+let usersTres = {
+  Alan: {
+    age: 27,
+    online: false
+  },
+  Jeff: {
+    age: 32,
+    online: true
+  },
+  Sarah: {
+    age: 48,
+    online: false
+  },
+  Ryan: {
+    age: 19,
+    online: true
+  }
+};
+
+function getArrayOfUsers(obj) {
+  return Object.keys(obj);
+}
+
+console.log(getArrayOfUsers(usersTres));
+
+/*---------------------------------------------------------------------------*/
