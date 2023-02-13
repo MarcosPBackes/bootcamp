@@ -516,3 +516,51 @@ delete foodsDois.strawberries
 console.log(foodsDois);
 
 /*---------------------------------------------------------------------------*/
+
+/*-----------------VERIFICAR SE UM OBJETO TEM UMA PROPRIEDADE-----------------
+Agora podemos adicionar, modificar e remover as chaves dos objetos. Mas e se 
+apenas quiséssemos saber se um objeto tem uma propriedade específica? O 
+JavaScript nos fornece duas maneiras diferentes de fazer isso. Um usa o 
+método hasOwnProperty() e o outro usa a palavra-chave in. Se tivermos um 
+objeto users com uma propriedade de Alan, podemos verificar a sua presença 
+de qualquer uma das seguintes maneiras:*/
+
+//exemplos
+
+let users = {
+  Alan: {
+    age: 27,
+    online: true
+  },
+  Jeff: {
+    age: 32,
+    online: true
+  },
+  Sarah: {
+    age: 48,
+    online: true
+  },
+  Ryan: {
+    age: 19,
+    online: true
+  }
+};
+
+users.hasOwnProperty('Alan');
+'Alan' in users;
+
+function isEveryoneHere(userObj) {
+  return ['Alan', 'Jeff', 'Sarah', 'Ryan'].every(name => 
+  userObj.hasOwnProperty(name))
+}
+
+function isEveryoneHereDois(userObj) {
+  return userObj.hasOwnProperty("Alan") &&
+     userObj.hasOwnProperty("Jeff") &&
+     userObj.hasOwnProperty("Sarah") &&
+     userObj.hasOwnProperty("Ryan");
+ }
+
+console.log(isEveryoneHere(users));
+
+/*---------------------------------------------------------------------------*/
