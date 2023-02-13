@@ -631,3 +631,43 @@ function getArrayOfUsers(obj) {
 console.log(getArrayOfUsers(usersTres));
 
 /*---------------------------------------------------------------------------*/
+
+/*--------------MODIFICAR O ARRAY ARMAZENADO EM UM OBJETO---------------------
+Agora você já viu todas as operações básicas para os objetos JavaScript. Você
+pode adicionar, modificar e remover pares de chave-valor, verifique se a chave
+existe e itere sobre todas as chaves em um objeto. Conforme continuar aprendendo
+JavaScript, você verá aplicações de objetos ainda mais versáteis. Adicionalmente,
+as aulas de Estrutura de Dados localizadas na seção Preparação para Entrevista 
+de Codificação do currículo também cobrem os objetos ES6 Map e Set, ambos são 
+semelhantes a objetos comuns, mas fornecem alguns recursos adicionais. */
+
+//exemplo
+
+let userQuatro = {
+  name: 'Kenneth',
+  age: 28,
+  data: {
+    username: 'kennethCodesAllDay',
+    joinDate: 'March 26, 2016',
+    organization: 'freeCodeCamp',
+    friends: [
+      'Sam',
+      'Kira',
+      'Tomo'
+    ],
+    location: {
+      city: 'San Francisco',
+      state: 'CA',
+      country: 'USA'
+    }
+  }
+};
+
+function addFriend(userObj, friend) {
+  userObj.data.friends.push(friend);
+  return userObj.data.friends;
+}
+
+console.log(addFriend(userQuatro, 'Pete'));
+
+/*---------------------------------------------------------------------------*/
