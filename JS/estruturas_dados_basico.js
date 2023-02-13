@@ -295,3 +295,48 @@ function filteredArray(arr, elem) {
 console.log(filteredArray([[3, 2, 3], [1, 6, 3], [3, 13, 26], [19, 3, 9]], 3));
 
 /*---------------------------------------------------------------------------*/
+
+/*------------------CRIAR ARRAYS MULTIDDIMENSIONAIS COMPLEXOS-----------------
+Excelente! Você acabou de aprender muito sobre arrays! Esta foi uma visão geral
+de nível bastante elevado, e há muito mais a aprender para trabalhar com arrays. 
+Muitas dessas questões você verá em sessões posteriores. Mas antes de passarmos 
+a examinar os objetos, vamos dar mais uma olhada e ver como os arrays podem se 
+tornar um pouco mais complexos do que aquilo que vimos nos desafios anteriores.
+Uma das características mais poderosas ao pensar em arrays como estruturas de 
+dados é que arrays podem conter, ou mesmo ser completamente compostos por outros
+arrays. Vimos arrays que contêm arrays em desafios anteriores, mas que são 
+bastante simples. No entanto, os arrays podem conter uma profundidade infinita 
+de arrays que podem conter outros arrays, cada um com seus próprios níveis 
+arbitrários de profundidade, e assim por diante. Desta forma, um array pode 
+muito rapidamente se tornar uma estrutura de dados muito complexa, conhecida 
+como array multidimensional ou array aninhado.*/
+
+//exemplos
+
+let nestedArray = [
+  ['deep'],//Nivel 2
+  [
+    ['deeper'], ['deeper']//nivel 3
+  ],
+  [
+    [
+      ['deepest'], ['deepest']//nivel 4
+    ],
+    [
+      [
+        ['deepest-est?']//nivel 5
+      ]
+    ]
+  ]
+];
+
+let myNestedArray = [
+  ['unshift', false, 1, 2, 3, 'complex', 'nested',
+  ['deep',['deeper',['deepest']]]],
+  ['loop', 'shift', 6, 7, 1000, 'method'],
+  ['concat', false, true, 'spread', 'array'],
+  ['mutate', 1327.98, 'splice', 'slice', 'push'],
+  ['iterate', 1.3849, 7, '8.4876', 'arbitrary', 'depth']
+];
+
+/*---------------------------------------------------------------------------*/
