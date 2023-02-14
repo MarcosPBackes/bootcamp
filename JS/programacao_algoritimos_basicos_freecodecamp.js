@@ -239,3 +239,41 @@ function truncateString(str, num) {
 }
 
 /*---------------------------------------------------------------------------*/
+
+/*-----------------------------------ACHAR NAO E ROUBAR----------------------
+Crie uma função que olhe através do array arr e retorne o primeiro elemento 
+dentro do array que passe pelo 'teste de verdade' ('truth test'). Isso 
+significa que, dado um elemento x, o 'teste de verdade' é verdadeiro se 
+func(x) é true. Se nenhum elemento passa no test, retorna undefined.*/
+
+//exemplo 1
+//usando for
+
+function findElement(arr, func) {
+  let num = 0;
+
+  for (let i = 0; i < arr.length; i++) {
+    num = arr[i];
+    if (func(num)) {
+      return num;
+    }
+  }
+
+  return undefined;
+}
+
+//exemplo 2
+//usando .find
+
+function findElementFind(arr, func) {
+  return arr.find(func);
+}
+
+//exemplo 3
+//usando .map e indexOf
+
+function findElementMap(arr, func) {
+  return arr[arr.map(func).indexOf(true)];
+}
+
+/*---------------------------------------------------------------------------*/
