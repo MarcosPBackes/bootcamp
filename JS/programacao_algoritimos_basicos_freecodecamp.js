@@ -165,3 +165,30 @@ function largestOfFourMap(arr) {
 }
 
 /*---------------------------------------------------------------------------*/
+
+/*--------------------------------CONFIRMAR O FINAL------------------------------
+Verifique se uma string (primeiro argumento, str) termina com a sequência de 
+caracteres de destino fornecida (segundo argumento, target).*/
+
+//exemplo 1
+//abordagem declarativa
+
+function confirmEnding(str, target) {
+  return str.slice(str.length - target.length) === target;
+}
+
+//exemplo 2
+//expressao regular
+
+function confirmEndingRegular(str, target) {
+  let re = new RegExp(target + "$", "i");
+  return re.test(str);
+}
+
+//exemplo 3
+
+function confirmEndingSlice(str, target) {
+  return str.slice(-target.length) === target
+}
+
+/*---------------------------------------------------------------------------*/
