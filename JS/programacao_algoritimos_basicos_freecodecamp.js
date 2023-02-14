@@ -387,3 +387,42 @@ function bouncerFor(arr) {
 }
 
 /*---------------------------------------------------------------------------*/
+
+/*------------------------ENCONTAR O LOCAL EM UM ARRAY------------------------
+Retorne o menor índice em que um valor (segundo argumento) deve ser inserido no 
+array (primeiro argumento) assim que tenha sido ordenado. O valor retornado 
+deve ser um número.*/
+
+//exemplo 1
+//usando filter
+
+function getIndexToIns(arr, num) {
+  return arr.filter(val => num > val).length;
+}
+
+//exemplo 2
+//usando for
+
+function getIndexToInsFor(arr, num) {
+  arr.sort((a, b) => a - b);
+
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] >= num) return i;
+  }
+
+  return arr.length;
+}
+
+//exemplo 3
+//usando findIndex
+
+function getIndexToInsFind(arr, num) {
+  // sort and find right index
+  let index = arr
+    .sort((curr, next) => curr - next)
+    .findIndex(currNum => num <= currNum);
+  // Returns index or total length of arr
+  return index === -1 ? arr.length : index;
+}
+
+/*---------------------------------------------------------------------------*/
