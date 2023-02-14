@@ -130,3 +130,38 @@ function findLongestWordLengthMap(str) {
 }
 
 /*---------------------------------------------------------------------------*/
+
+/*------------------RETORNAR OS MAIORES NUMEROS EM ARRAYS---------------------
+Retorna um array que consiste no maior número de cada sub-array fornecido. 
+Por simplicidade, o array fornecido conterá exatamente 4 sub-arrays.*/
+
+//exemplo 1
+//com for
+
+function largestOfFour(arr) {
+  const results = [];
+  for (let i = 0; i < arr.length; i++) {// para i menor que comprimento de arr i + 1
+    let largestNumber = arr[i][0];
+    for (let j = 1; j < arr[i].length; j++) {
+      if (arr[i][j] > largestNumber) {
+        largestNumber = arr[i][j];
+      }
+    }
+    results[i] = largestNumber;
+  }
+
+  return results;
+}
+
+//exemplo 2
+//com .map e .reduce
+
+function largestOfFourMap(arr) {
+  return arr.map(function(group) {
+    return group.reduce(function(prev, current) {
+      return current > prev ? current : prev;
+    });
+  });
+}
+
+/*---------------------------------------------------------------------------*/
