@@ -290,3 +290,40 @@ function booWho(bool) {
 booWho(null);
 
 /*---------------------------------------------------------------------------*/
+
+/*-----------CAPITALIZAR PRIMEIRA LERA DE CADA PALAVRA DE UM FRASE------------
+Retorne a string fornecida com a primeira letra de cada palavra em letra 
+maiúscula. Certifique-se de que o resto da palavra esteja em letras minúsculas.
+Para o propósito desse exercício, você também deve capitalizar as palavras 
+conectoras como the e of.*/
+
+//exemplo 1
+
+function titleCase(str) {
+  return str
+    .toLowerCase()
+    .replace(/(^|\s)\S/g, L => L.toUpperCase());
+}
+
+//exemplo 2
+
+function titleCaseDois(str) {
+  const newTitle = str.split(" ");
+  const updatedTitle = [];
+  for (let st in newTitle) {
+    updatedTitle[st] = newTitle[st][0].toUpperCase() + newTitle[st].slice(1).toLowerCase();
+  }
+  return updatedTitle.join(" ");
+}
+
+//exemplo 3
+
+function titleCaseTres(str) {
+  return str
+    .toLowerCase()
+    .split(" ")
+    .map(val => val.replace(val.charAt(0), val.charAt(0).toUpperCase()))
+    .join(" ");
+}
+
+/*---------------------------------------------------------------------------*/
