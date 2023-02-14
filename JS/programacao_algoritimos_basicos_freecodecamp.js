@@ -291,7 +291,7 @@ booWho(null);
 
 /*---------------------------------------------------------------------------*/
 
-/*-----------CAPITALIZAR PRIMEIRA LERA DE CADA PALAVRA DE UM FRASE------------
+/*-----------CAPITALIZAR PRIMEIRA LETRA DE CADA PALAVRA DE UMA FRASE------------
 Retorne a string fornecida com a primeira letra de cada palavra em letra 
 maiúscula. Certifique-se de que o resto da palavra esteja em letras minúsculas.
 Para o propósito desse exercício, você também deve capitalizar as palavras 
@@ -324,6 +324,41 @@ function titleCaseTres(str) {
     .split(" ")
     .map(val => val.replace(val.charAt(0), val.charAt(0).toUpperCase()))
     .join(" ");
+}
+
+/*---------------------------------------------------------------------------*/
+
+/*------------------------------FATIAR E EMENDAR-----------------------------
+Você está recebendo dois arrays e um índice.
+Copie cada elemento da primeira matriz para a segunda matriz, em ordem.
+Comece inserindo elementos no índice n do segundo array.
+Retorne o array resultante. Os arrays recebidos devem permanecer os mesmos 
+após a função ser executada.*/
+
+//exemplo 1
+
+function frankenSplice(arr1, arr2, n) {
+  return [...arr2.slice(0, n), ...arr1, ...arr2.slice(n)];
+}
+
+//exemplo 2
+
+function frankenSpliceDois(arr1, arr2, n) {  
+  let localArray = arr2.slice();
+  for (let i = 0; i < arr1.length; i++) {
+    localArray.splice(n, 0, arr1[i]);
+    n++;
+  }
+  return localArray;
+}
+
+//exemplo 3
+
+function frankenSpliceTres(arr1, arr2, n) {
+  // It's alive. It's alive!
+  let localArr = arr2.slice();
+  localArr.splice(n, 0, ...arr1);
+  return localArr;
 }
 
 /*---------------------------------------------------------------------------*/
