@@ -426,3 +426,46 @@ function getIndexToInsFind(arr, num) {
 }
 
 /*---------------------------------------------------------------------------*/
+
+/*--------------------------INDENTIFICAR MUTAÇOES-----------------------------
+Retorne true se a string no primeiro elemento do array contém todas as letras 
+da string no segundo elemento do array.*/
+
+//exemplo 1
+//usando for
+
+function mutation(arr) {
+  const test = arr[1].toLowerCase();
+  const target = arr[0].toLowerCase();
+  for (let i = 0; i < test.length; i++) {
+    if (target.indexOf(test[i]) < 0) return false;
+  }
+  return true;
+}
+
+//exemplo 2
+//declarativo
+
+function mutationDeclarativo(arr) {
+  return arr[1]
+    .toLowerCase()
+    .split("")
+    .every(function(letter) {
+      return arr[0].toLowerCase().indexOf(letter) !== -1;
+    });
+}
+
+//exemplo 3
+//recursivo
+
+function mutationRecursiva([ target, test ], i = 0) {
+  target = target.toLowerCase();
+  test = test.toLowerCase();
+  return i >= test.length
+    ? true
+    : !target.includes(test[i])
+      ? false
+      : mutation([ target, test ], i + 1);
+}
+
+/*---------------------------------------------------------------------------*/
