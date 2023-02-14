@@ -16,3 +16,13 @@ convertCtoF(30);
 
 /*---------------------------------------------------------------------------*/
 
+/*--------------------------INVERTER UMA STRING--------------------------------
+Inverta a string fornecida e retorne-a com a inversão.
+Por exemplo, "hello" deve se tornar "olleh".*/
+
+function reverseString(str) {
+  return str.split('').reverse().join('');
+}
+reverseString("hello");
+
+/*---------------------------------------------------------------------------*/
