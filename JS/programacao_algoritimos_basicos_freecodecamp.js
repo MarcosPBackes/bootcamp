@@ -63,10 +63,70 @@ function factorializeTail(num, factorial = 1) {
     return factorial;
   } else {
     return factorializeTail(num - 1, factorial * num);//executa primeiro os 
-                                                      //calculos depois chamada recursiva
+                                                      //calculos antes depois chamada recursiva
   }
 }
 
 factorializeTail(5);
+
+/*---------------------------------------------------------------------------*/
+
+/*---------------RETORNAR A PALAVRA MAIS LONGA EM UMA STRING------------------
+Retornar o comprimento da palavra mais longa na frase fornecida.
+Sua resposta deve ser um número.*/
+
+//exemplo 1
+
+function findLongestWordLength(str) {
+  let longestLength = 0;
+  let currentLength = 0;
+  
+  for (let i = 0; i < str.length; i++) {// i = 0 i menor que comprimento da string i +1
+    if (str[i] === " ") {
+      if (currentLength > longestLength) {//se currenteLength maior que longestLength
+        longestLength = currentLength;//longestLength recebe currenteLength
+      }
+      currentLength = 0;
+    } else {
+      currentLength++;
+    }
+  }
+  if (currentLength > longestLength) {
+    longestLength = currentLength;
+  }
+  
+  return longestLength;
+  }
+
+//exemplo 2
+
+function findLongestWordLengthDois(str) {
+  let words = str.split(' ');
+  let maxLength = 0;
+
+  for (let i = 0; i < words.length; i++) {// i = 0 i menor que comprimento da string i +1
+    if (words[i].length > maxLength) {//se comprimento de words[i] maior que maxLength
+      maxLength = words[i].length;//maxLength recebe comprimento de words[i]
+    }
+  }
+
+  return maxLength;
+}
+
+//exemplo 3
+//usando .reduce
+
+function findLongestWordLengthReduce(s) {
+  return s
+    .split(' ')
+    .reduce((longest, word) => Math.max(longest, word.length), 0);
+}
+
+//exemplo 4
+//usando .map
+
+function findLongestWordLengthMap(str) {
+  return Math.max(...str.split(" ").map(word => word.length));
+}
 
 /*---------------------------------------------------------------------------*/
