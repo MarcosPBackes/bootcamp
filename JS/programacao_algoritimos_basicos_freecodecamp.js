@@ -362,3 +362,28 @@ function frankenSpliceTres(arr1, arr2, n) {
 }
 
 /*---------------------------------------------------------------------------*/
+
+/*------------------------------REMOVER FALSOS-------------------------------
+Remover todos os valores falsos de um array. Retorna um novo array; não altere
+o array original.MValores falsos (falsy) em JavaScript são false, null, 0, "",
+undefined, e NaN.MDica: tente converter cada valor para um booleano.*/
+
+//exemplo 1
+//usando filter
+
+function bouncer(arr) {
+  return arr.filter(Boolean);
+}
+
+//exemplo 2
+//usando for
+
+function bouncerFor(arr) {
+  const filteredArr = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i]) filteredArr.push(arr[i]);
+  }
+  return filteredArr;
+}
+
+/*---------------------------------------------------------------------------*/
