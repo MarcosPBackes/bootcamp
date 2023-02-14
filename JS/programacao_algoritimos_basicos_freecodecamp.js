@@ -277,3 +277,16 @@ function findElementMap(arr, func) {
 }
 
 /*---------------------------------------------------------------------------*/
+
+/*---------------------IDENTIFICAR VERDADEIRO OU FALSO------------------------
+Verifique se um valor é classificado como booleano primitivo. Retorna true ou false.*/
+
+//exemplo
+
+function booWho(bool) {
+  return typeof bool === 'boolean';
+}
+
+booWho(null);
+
+/*---------------------------------------------------------------------------*/
