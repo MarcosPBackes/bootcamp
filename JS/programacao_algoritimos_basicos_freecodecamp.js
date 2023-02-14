@@ -469,3 +469,72 @@ function mutationRecursiva([ target, test ], i = 0) {
 }
 
 /*---------------------------------------------------------------------------*/
+
+/*-------------------------DIVIDIR E AGRUPAR----------------------------------
+Escreva uma função que divida um array (primeiro argumento) em grupos com o 
+comprimento de size (segundo argumento) e os retorne como um array bidimensional.*/
+
+//exemplo 1
+
+function chunkArrayInGroupsUm(arr, size) {
+  const newArr = [];
+  while (arr.length > 0) {
+    newArr.push(arr.splice(0, size));
+  }
+  return newArr;
+}
+
+//exemplo 2
+
+function chunkArrayInGroupsDois(arr, size) {
+  if (arr.length <= size) {
+    return [arr];
+  } else {
+    return [arr.slice(0, size)].concat(
+      chunkArrayInGroupsDois(arr.slice(size), size)
+    );
+  }
+}
+
+//exemplo 3 
+
+function chunkArrayInGroupsTres(arr, size) {
+  // Break it up.
+  const newArr = [];
+  for (let i = 0; i < arr.length; i += size) {
+    newArr.push(arr.slice(i, i + size));
+  }
+  return newArr;
+}
+
+//exemplo 4
+
+function chunkArrayInGroupsQuatro(arr, size) {
+  let temp = [];
+  const result = [];
+
+  for (let a = 0; a < arr.length; a++) {
+    if (a % size !== size - 1) temp.push(arr[a]);
+    else {
+      temp.push(arr[a]);
+      result.push(temp);
+      temp = [];
+    }
+  }
+
+  if (temp.length !== 0) result.push(temp);
+  return result;
+}
+
+//exemplo 5
+
+function chunkArrayInGroupsCinco(arr, size) {
+  // Break it up.
+  const newArr = [];
+  for (let i = 0; i < arr.length; i += size) {
+    newArr.push(arr.slice(i, i + size));
+  }
+  return newArr;
+}
+
+/*---------------------------------------------------------------------------*/
