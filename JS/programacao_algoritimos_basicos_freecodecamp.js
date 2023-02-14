@@ -192,3 +192,33 @@ function confirmEndingSlice(str, target) {
 }
 
 /*---------------------------------------------------------------------------*/
+
+/*---------------------------REPETIR UMA STRING------------------------------
+Repita uma string passada str (primeiro argumento), num vezes (segundo argumento).
+Retorne uma string vazia se num não for um número positivo. Para o propósito do 
+desafio, Não use o método integrado .repeat().*/
+
+//exemplo 1
+//usando for
+
+function repeatStringNumTimes(str, num) {
+  let accumulatedStr = "";
+
+  for (let i = 0; i < num; i++) {
+    accumulatedStr += str;
+  }
+  return accumulatedStr;
+}
+
+//exemplo 2
+//usando if
+
+function repeatStringNumTimes(str, num) {
+  if (num < 1) {
+    return "";
+  } else {
+    return str + repeatStringNumTimes(str, num - 1);
+  }
+}
+
+/*---------------------------------------------------------------------------*/
