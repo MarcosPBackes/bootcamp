@@ -213,11 +213,28 @@ function repeatStringNumTimes(str, num) {
 //exemplo 2
 //usando if
 
-function repeatStringNumTimes(str, num) {
+function repeatStringNumTimesIf(str, num) {
   if (num < 1) {
     return "";
   } else {
-    return str + repeatStringNumTimes(str, num - 1);
+    return str + repeatStringNumTimesIf(str, num - 1);
+  }
+}
+
+/*---------------------------------------------------------------------------*/
+
+/*-----------------------------TRUNCAR UMA STRING-----------------------------
+Trunque uma string (primeiro argumento) se ela for maior que o comprimento 
+máximo da string (segundo argumento). Retorne a string truncada com ... 
+(reticências) ao final.*/
+
+//exemplo
+
+function truncateString(str, num) {
+  if (str.length > num) {
+    return str.slice(0, num) + "...";
+  } else {
+    return str;
   }
 }
 
