@@ -529,3 +529,44 @@ let duckAlpha = new Bird();
 let beagleAlpha = new Dog();
 
 /*---------------------------------------------------------------------------*/
+
+/*----------------------ADICIONAR METODOS APOS A HERANÇA---------------------
+Uma função construtora, ou simplesmente construtor, que herda seu objeto de 
+prototype de uma função construtora de supertipo, além dos métodos herdados, 
+ainda poderá ter seus próprios métodos.
+Por exemplo, Bird é um construtor que herda seu prototype de Animal:*/
+
+function Animal() { }
+Animal.prototype.eat = function() {
+  console.log("nom nom nom");
+};
+function Bird() { }
+Bird.prototype = Object.create(Animal.prototype);
+Bird.prototype.constructor = Bird;
+
+/*Como adicional do que é herdado da classe Animal, você deseja adicionar 
+o comportamento que é único de objetos Bird. Aqui, Bird definirá a função 
+fly(). As funções são adicionadas ao Bird's prototype (protótipo do pássaro) 
+da mesma forma que qualquer função construtora:*/
+
+Bird.prototype.fly = function() {
+  console.log("I'm flying!");
+};
+//Agora as instâncias de Bird terão ambos os métodos, eat() e fly():
+
+//exemplo 
+
+function Animal() { }
+Animal.prototype.eat = function() { console.log("nom nom nom"); };
+
+function Dog() { }
+
+Dog.prototype = Object.create(Animal.prototype);
+Dog.prototype.constructor = Dog;
+Dog.prototype.bark = function() {
+  console.log('Woof!');
+};
+
+let marrom = new Dog();
+
+/*---------------------------------------------------------------------------*/
