@@ -361,3 +361,20 @@ Doge.prototype = {
 };
 
 /*---------------------------------------------------------------------------*/
+
+/*----------------ENTENDER DE ONDE VEM O PROTOTIPO DE UM OBJETO---------------
+Assim como uma pessoa herda o gene de seus parentes, um objeto herda seu 
+prototype diretamente da função construtora que o criou. Por exemplo, aqui 
+o construtor de Bird cria um objeto duck:*/
+
+//exemplo
+
+function Doge (name) {
+  this.name = name;
+}
+
+let bea = new Doge ("Snoopy");
+
+Doge.prototype.isPrototypeOf(bea);//true
+
+/*---------------------------------------------------------------------------*/
