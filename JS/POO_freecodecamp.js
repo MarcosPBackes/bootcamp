@@ -467,3 +467,33 @@ let ducks = Object.create(Animal.prototype);
 let beagles = Object.create(Animal.prototype);
 
 /*---------------------------------------------------------------------------*/
+
+/*---DEFINIR O PROTOTIPO DA CLASSE FILHA PARA QUE SEJA UM INSTANCIA DO PAI-----
+Este desafio cobre o próximo passo: definir o prototype do subtipo (ou filho) - 
+neste caso, Bird - para ser uma instância de Animal.*/
+
+Bird.prototype = Object.create(Animal.prototype);
+
+/*Lembre-se de que o prototype é como uma receita para criar um objeto. 
+De certo modo, a receita de Bird agora inclui todos os "ingredientes" 
+importantes de Animal.
+duck herda todas as propriedades de Animal, incluindo o método eat.*/
+
+//exemplos
+
+function Animal() { }
+
+Animal.prototype = {
+  constructor: Animal,
+  eat: function() {
+    console.log("nom nom nom");
+  }
+};
+
+function Dog() { }
+
+Dog.prototype = Object.create(Animal.prototype);
+
+let cinza = new Dog();
+
+/*---------------------------------------------------------------------------*/
