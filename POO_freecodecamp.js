@@ -112,3 +112,21 @@ function Dog() {
 
 /*---------------------------------------------------------------------------*/
 
+/*------------------USAR UM CONSTRUTOR PARA CRIAR OBJETOS---------------------*/
+
+//exemplos
+  
+let blueBird = new Bird();//operador new é usado quando chamamos o construtor. 
+                          //Isso avisa ao JavaScript para criar uma nova instância de Bird
+blueBird.name = 'Rokie';
+blueBird.color = 'blue';
+blueBird.numLegs = 2;
+//Assim como qualquer outro objeto, suas propriedades podem ser acessadas e modificadas:
+
+let hound = new Dog();
+
+hound.name = 'Mag';
+hound.color = 'pink';
+hound.numLegs = 4;
+
+/*---------------------------------------------------------------------------*/
