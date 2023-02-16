@@ -59,3 +59,27 @@ dogSay.sayLegs();
 
 /*---------------------------------------------------------------------------*/
 
+/*-------------FAZER CODIGO MAIS REUTILIZAVEL COM A PALAVRA-CHAVE THIS--------
+Enquanto isso é uma forma válida de acessar a propriedade do objeto, tem uma 
+armadilha aqui. Se o nome da variável mudar, qualquer código referenciando o 
+nome original seria necessário ser atualizado também. Em uma definição curta 
+de objeto, isso não é um problema, mas se um objeto possui muitas referencias 
+para suas propriedades, há uma chance maior de erro. Uma forma para evitar 
+estes problemas é utilizar a palavra-chave this:*/
+
+let duckThis = {
+    name: "Aflac",
+    numLegs: 2,
+    sayName: function() {return "The name of this duck is " + this.name + ".";}
+    //sayName: function() {return "The name of this duck is " + duck.name + ".";}
+  };
+
+let dogThis = {
+name: "Spot",
+numLegs: 4,
+sayLegs: function() {return "This dog has " + this.numLegs + " legs.";}
+};
+
+dog.sayLegs();
+
+/*---------------------------------------------------------------------------*/
