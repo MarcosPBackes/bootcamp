@@ -180,12 +180,42 @@ function House(numBedrooms) {
 let myHouse = new House(3)
 myHouse instanceof House;//Retorna true
 
-let canary = {
+let canaryFalse = {
     name: "Mildred",
     color: "Yellow",
     numLegs: 2
 };
   
-canary instanceof Passaro;//Retorna falso
+canaryFalse instanceof Passaro;//Retorna falso
   
+/*---------------------------------------------------------------------------*/
+
+/*-------------------ESTENDER PROPRIEDADES PROPRIAS---------------------------
+name e numLegs são chamados own properties, pois são definidos diretamente na 
+instância do objeto. Isso significa que cada duck e canary possuem suas próprias 
+cópias separadas destas propriedades. Na verdade, toda instância de Passaros terá 
+sua própria cópia dessas propriedades. O código a seguir adiciona todas as 
+propriedades próprias (own properties) de duck para o array ownProps:*/
+
+//exemplos
+
+let azulProps = [];
+
+for (let property in azul) {
+  if(azul.hasOwnProperty(property)) {
+    azulProps.push(property);
+  }
+}
+
+console.log(azulProps);//O console vai exibir o valor ["name", "numLegs"].
+
+
+let canaryProps = [];
+
+for (let property in canary) {
+  if(canary.hasOwnProperty(property)) {
+    canaryProps.push(property)
+  }
+}
+
 /*---------------------------------------------------------------------------*/
