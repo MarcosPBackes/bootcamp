@@ -309,3 +309,28 @@ console.log(duck.constructor === Bird);//Retorna true
 console.log(beagle.constructor === Dog);//Retorna true
 
 /*---------------------------------------------------------------------------*/
+
+/*-----------------MUDAR O PROTOTIPO PARA UM NOVO OBJETO----------------------
+Até o momento, você tem adicionado propriedades para cada prototype individualmente:
+Isto se torna entediante após mais do que algumas propriedades.
+Uma forma mais eficiente é definir o prototype para um novo objeto que já possui 
+as propriedades. Dessa maneira, as propriedades são adicionadas todas de uma vez:*/
+
+//exemplo
+
+function Doge(name) {
+  this.name = name;
+}
+
+Doge.prototype = {
+  // Altere apenas o código abaixo desta linha
+  numLegs: 4,
+  eat: function() {
+    console.log('nom nom');
+  },
+  describe: function() {
+    console.log('My name is ' + this.name);
+  }
+};
+
+/*---------------------------------------------------------------------------*/
