@@ -334,3 +334,30 @@ Doge.prototype = {
 };
 
 /*---------------------------------------------------------------------------*/
+
+/*---LEMBRAR DE DEFINIR A PROPRIEDADE CONSTRUTORA QUANDO ALTERAR O PROTOTIPO---
+Tem um efeito colateral crucial de definir manualmente o protótipo de um novo 
+objeto. Isso apaga a propriedade constructor! Essa propriedade pode ser 
+utilizada para verificar qual função construtora criou a instância, mas já 
+que a propriedade foi sobrescrita, agora retorna resultados falsos:
+Para corrigir isso, toda vez que o protótipo é manualmente definido para um 
+novo objeto, lembre-se de definir a propriedade constructor:*/
+
+//exemplo
+
+duck.constructor === Doge;//false
+duck.constructor === Object;//true
+duck instanceof Bird;//true
+
+Doge.prototype = {
+  constructor: Doge,
+  numLegs: 4,
+  eat: function() {
+    console.log("nom nom nom");
+  },
+  describe: function() {
+    console.log("My name is " + this.name);
+  }
+};
+
+/*---------------------------------------------------------------------------*/
