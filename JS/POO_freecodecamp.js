@@ -378,3 +378,24 @@ let bea = new Doge ("Snoopy");
 Doge.prototype.isPrototypeOf(bea);//true
 
 /*---------------------------------------------------------------------------*/
+
+/*-----------------------ENTENDER A CADEIA DE PROTOTIPOS---------------------
+Todos os objetos em JavaScript (com algumas exceções) possuem um prototype. 
+Além de que, um prototype de um objeto ser um próprio objeto.
+Devido ao fato de um prototype ser um objeto, um prototype pode ter seu 
+próprio prototype! Neste caso, o prototype de Bird.prototype é um 
+Object.prototype:
+O método hasOwnProperty é definido em Object.prototype, o qual pode ser 
+acessado por Bird.prototype, o qual pode ser acessado por duck. Este é 
+um exemplo de cadeia de prototype. Nesta cadeia de prototype, Bird é 
+um supertipo para duck, enquanto duck é o subtipo. Object é um supertipo
+para ambos Bird e duck. Object é um supertipo para todos os objetos em 
+JavaScript. Desta forma, qualquer objeto pode utilizar o método hasOwnProperty.*/
+
+//exemplo
+
+Dog.prototype.isPrototypeOf(beagle);  // retorna verdadeiro
+
+Object.prototype.isPrototypeOf(Dog.prototype);
+
+/*---------------------------------------------------------------------------*/
