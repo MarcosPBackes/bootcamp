@@ -468,7 +468,7 @@ let beagles = Object.create(Animal.prototype);
 
 /*---------------------------------------------------------------------------*/
 
-/*---DEFINIR O PROTOTIPO DA CLASSE FILHA PARA QUE SEJA UM INSTANCIA DO PAI-----
+/*---DEFINIR O PROTOTIPO DA CLASSE FILHA PARA QUE SEJA UMA INSTANCIA DO PAI-----
 Este desafio cobre o próximo passo: definir o prototype do subtipo (ou filho) - 
 neste caso, Bird - para ser uma instância de Animal.*/
 
@@ -495,5 +495,37 @@ function Dog() { }
 Dog.prototype = Object.create(Animal.prototype);
 
 let cinza = new Dog();
+
+/*---------------------------------------------------------------------------*/
+
+/*----------------REDEFINIR UMA PROPRIEDADE HERDADA DO CONSTRUTOR--------------
+Quando um objeto herda seu prototype de outro objeto, ele também herda a 
+propriedade construtora do supertipo.*/
+
+function Bird() { }
+Bird.prototype = Object.create(Animal.prototype);
+let duckye = new Bird();
+duckye.constructor
+
+/*Mas duck e todas as instâncias de Bird devem mostrar que eles foram 
+construídos por Bird e não Animal. Para fazer isso, você pode 
+manualmente definir a propriedade construtora de Bird para o objeto Bird:*/
+
+Bird.prototype.constructor = Bird;
+duck.constructor
+
+//exemplo
+
+function Animal() { }
+function Bird() { }
+function Dog() { }
+
+Bird.prototype = Object.create(Animal.prototype);
+Dog.prototype = Object.create(Animal.prototype);
+
+Bird.prototype.constructor = Bird;
+Dog.prototype.constructor = Dog;
+let duckAlpha = new Bird();
+let beagleAlpha = new Dog();
 
 /*---------------------------------------------------------------------------*/
