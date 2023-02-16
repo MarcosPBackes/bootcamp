@@ -241,3 +241,46 @@ Dogo.prototype.numLegs = 4;
 let beagle = new Dogo("Snoopy");
 
 /*---------------------------------------------------------------------------*/
+
+/*-----------------------ITERAR SOBRE TODAS AS PROPRIEDADES-------------------
+Até agora você já viu dois tipos de propriedades: as propriedades own properties
+e prototype. Propriedades próprias (ou Own properties) são definidas diretamente 
+na própria instância do objeto. E as propriedades do protótipo são definidas em
+prototype.*/
+
+//exemplos
+
+let pato = new Bird("Donald");
+let ownPropsPato = [];
+let prototypePropsPato = [];
+
+for (let property in pato) {
+  if(pato.hasOwnProperty(property)) {
+    ownPropsPato.push(property);
+  } else {
+    prototypePropsPato.push(property);
+  }
+}
+
+console.log(ownPropsPato);
+console.log(prototypePropsPato);
+
+function Cao(name) {
+  this.name = name;
+}
+
+Cao.prototype.numLegs = 4;
+
+let caramelo = new Cao("Snoopy");
+let ownPropsCao = [];
+let prototypePropsCao = [];
+
+for (let property in caramelo) {
+  if(caramelo.hasOwnProperty(property)) {
+    ownPropsCao.push(property);
+  } else {
+    prototypePropsCao.push(property); 
+  }
+}
+
+/*---------------------------------------------------------------------------*/
