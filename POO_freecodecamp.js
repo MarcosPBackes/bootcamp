@@ -219,3 +219,25 @@ for (let property in canary) {
 }
 
 /*---------------------------------------------------------------------------*/
+
+/*--------USAR PROPRIEDADES DE PROTOTIPOS PARA REDUZIR CODIGO DUPLICADO---------
+Já que numLegs provavelmente terá o mesmo valor para todas as instâncias de 
+Bird, você tem a variável numLegs duplicada dentro de cada instância de Bird.
+Isso pode não ser um problema quando há apenas duas instâncias, mas imagine se 
+há milhões de instâncias. Neste cenário teríamos muitas variáveis duplicadas.
+Uma maneira melhor é usar o prototype de Bird. Propriedades dentro de prototype 
+são compartilhados entre todas as instâncias de Bird. Aqui está como adicionar 
+numLegs para o prototype de Bird:*/
+
+//exemplos
+
+Bird.prototype.numLegs = 2;
+
+function Dogo(name) {
+    this.name = name;
+  }
+Dogo.prototype.numLegs = 4;   
+
+let beagle = new Dogo("Snoopy");
+
+/*---------------------------------------------------------------------------*/
