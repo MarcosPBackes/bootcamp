@@ -695,3 +695,21 @@ function Bird() {
 
 /*---------------------------------------------------------------------------*/
 
+/*---------ENTENDER A EXPRESSAO DE FUNÇAO INVOCADA IMEDIATAMENTE--------------
+Um padrão comum em JavaScript é executar a função assim que ela é declara
+Note que a função não possui nome e não é armazenada em uma variável. Os dois 
+parênteses () ao final da expressão da função faz com que ela seja imediatamente 
+executada ou invocada. Este padrão é conhecido como immediately invoked function 
+expression (expressão de função invocada imediatamente) ou IIFE.*/
+
+//exemplos
+
+(function () {
+  console.log("Chirp, chirp!");
+})();
+
+(function () {
+  console.log("A cozy nest is ready");
+})();
+
+/*---------------------------------------------------------------------------*/
