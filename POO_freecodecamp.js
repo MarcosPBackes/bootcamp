@@ -130,3 +130,33 @@ hound.color = 'pink';
 hound.numLegs = 4;
 
 /*---------------------------------------------------------------------------*/
+
+/*-------------ESTENDER CONSTRUTORAS PARA RECEBER ARGUMENTOS------------------
+Os construtores Bird e Dog do último desafio funcionaram bem. No entanto, note 
+que todos os Birds que são criados com o construtor Bird são automaticamente 
+nomeados Albeart, são da cor azul e possuem duas pernas. E se você deseja 
+pássaros com diferentes valores para seus nomes e cores? É possível alterar 
+estas propriedades de cada pássaro manualmente, mas isso daria bastante trabalho:*/
+
+/*Suponha que você está escrevendo um programa para registrar centenas ou até 
+milhares de diferentes pássaros em um aviário. Seria necessário muito tempo para 
+criar todos estes pássaros, e então alterar as propriedades para os diferentes 
+valores de cada um. Para criar diferentes objetos Bird de forma mais fácil, você 
+pode projetar o construtor de Bird para aceitar parâmetros:*/
+
+//exemplos
+
+function Passaro(name, color) {
+    this.name = name;
+    this.color = color;
+    this.numLegs = 2;
+}
+
+function Cao(name, color,) {
+    this.name = name;
+    this.color = color;
+    this.numLegs = 4
+  }
+let terrier = new Cao('Xuxu', 'cinza')  
+
+/*---------------------------------------------------------------------------*/
