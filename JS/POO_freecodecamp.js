@@ -399,3 +399,40 @@ Dog.prototype.isPrototypeOf(beagle);  // retorna verdadeiro
 Object.prototype.isPrototypeOf(Dog.prototype);
 
 /*---------------------------------------------------------------------------*/
+
+/*------------------UTILIZAR HERANÇA PARA NAO SE REPETIR----------------------
+Tem um princípio da programação chamado Don't Repeat Yourself (DRY) - Não se 
+Repita. O motivo pelo qual código repetido é um problema se deve ao fato de 
+qualquer alteração exige correção de código em vários locais. Geralmente isso 
+significa mais trabalho para os programadores e mais espaço para erros.*/
+
+//exemplo
+
+function Cat(name) {
+  this.name = name;
+}
+
+Cat.prototype = {
+  constructor: Cat,
+  
+};
+
+function Bear(name) {
+  this.name = name;
+}
+
+Bear.prototype = {
+  constructor: Bear,
+};
+
+function Animal() { }
+
+Animal.prototype = {
+  constructor: Animal,
+  eat: function() {
+    console.log("nom nom nom");
+  }
+
+};
+
+/*---------------------------------------------------------------------------*/
