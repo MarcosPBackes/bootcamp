@@ -26,3 +26,11 @@ numLegs: 4,
 
 /*---------------------------------------------------------------------------*/
 
+/*-----USAR NOTAÇAO DE PONTO PARA ACESSAR AS PROPRIEDADES DE UM OBJETO-------*/
+
+//exemlos
+
+console.log(duck.name);
+console.log(dog.numLegs);
+
+/*---------------------------------------------------------------------------*/
