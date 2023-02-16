@@ -34,3 +34,28 @@ console.log(duck.name);
 console.log(dog.numLegs);
 
 /*---------------------------------------------------------------------------*/
+
+/*---------------------------CRIAR UM METODOD EM UM OBJETO--------------------
+Objetos podem ter um tipo especial de propriedade, chamado de método.
+Os métodos são propriedades que são funções. Isso adiciona diferentes 
+comportamentos para um objeto*/
+
+//exemplos
+
+let duckSay = {
+    name: "Aflac",
+    numLegs: 2,
+    sayName: function() {return "The name of this duck is " + duckSay.name + ".";}
+};
+duckSay.sayName();
+
+let dogSay = {
+    name: "Spot",
+    numLegs: 4,
+    sayLegs: function() {return 'This dog has ' + dogSay.numLegs + ' legs.'}
+};
+
+dogSay.sayLegs();  
+
+/*---------------------------------------------------------------------------*/
+
