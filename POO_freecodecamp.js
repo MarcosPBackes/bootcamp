@@ -284,3 +284,28 @@ for (let property in caramelo) {
 }
 
 /*---------------------------------------------------------------------------*/
+
+/*--------------------ENTENDER A PROPRIEDADE CONSTRUTORA----------------------
+Tem uma propriedade especial do constructor localizada nas instâncias dos objetos.
+Note que a propriedade constructor é uma referência a função construtora que 
+criou a instância. A vantagem da propriedade constructor é que se torna possível 
+verificar essa propriedade para descobrir qual o tipo do objeto. */
+
+/*Observação: já que a propriedade constructor pode ser sobrescrita (o que 
+será abordado nos próximos dois desafios), geralmente é melhor utilizar o 
+método instanceof para verificar o tipo de um objeto.*/
+
+//exemplos
+
+function joinBirdFraternity(candidate) {
+  if (candidate.constructor === Bird) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+console.log(duck.constructor === Bird);//Retorna true 
+console.log(beagle.constructor === Dog);//Retorna true
+
+/*---------------------------------------------------------------------------*/
