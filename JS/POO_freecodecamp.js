@@ -609,3 +609,52 @@ let penguin = new Penguin();
 console.log(penguin.fly());
 
 /*---------------------------------------------------------------------------*/
+
+/*---USAR MIXIN PARA ADICIONAR COMPORTAMENTOS COMUNS ENTRE OBJETOS NAO RELACIONADOS---
+Como você já viu, comportamento é compartilhado através de herança. Porém, existem 
+casos em que a herança não é a melhor solução. Herança não funciona muito bem para 
+objetos não-relacionados como Bird e Airplane. Ambos podem voar, mas um Bird não é 
+um tipo de Airplane e vice-versa.
+Para objetos não relacionados, é melhor usar mixins. Um mixin permite outros 
+objetos para utilizar uma coleção de funções.*/
+
+//exemplos
+
+let flyMixin = function(obj) {
+  obj.fly = function() {
+    console.log("Flying, wooosh!");
+  }
+};
+
+let bird = {
+  name: "Donald",
+  numLegs: 2
+};
+
+let plane = {
+  model: "777",
+  numPassengers: 524
+};
+
+flyMixin(bird);
+flyMixin(plane);
+
+//Aqui bird e plane são passados para flyMixin, o que em seguida atribui a 
+//função fly para cada objeto. Agora bird e plane podem ambos voar:
+
+let boat = {
+  name: "Warrior",
+  type: "race-boat"
+};
+
+
+let glideMixin = function(obj) {
+  obj.glide = function() {
+    console.log('glide')
+  }
+};
+
+glideMixin(bird);
+glideMixin(boat);
+
+/*---------------------------------------------------------------------------*/
