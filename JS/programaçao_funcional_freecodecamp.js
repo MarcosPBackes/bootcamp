@@ -201,3 +201,43 @@ function incrementer(fixedValueDois) {
 }
 
 /*---------------------------------------------------------------------------*/
+
+/*---------------REFATORAR VARIAVEIS GLOBAIS FORA DE FUNÇOES------------------
+Até agora vimos dois princípios diferentes de programação funcional:
+    Não altere variáveis ou objetos: crie novas variáveis ou objetos e os 
+retorne, caso necessário, de uma função. Dica: escrever algo como const newArr 
+= arrVar onde arrVar é um array não o copiará para a nova a variável, e sim 
+apenas criará uma nova referência ao mesmo objeto. Então mudar um valor em 
+newArr também o muda em arrVar.
+    Declare parâmetros de funções: qualquer computação dentro de uma função 
+depende apenas dos argumentos passados a ela; nunca de uma variável ou objeto 
+global.
+Incrementar um número em um não é tão divertido, mas podemos aplicar esses 
+princípios ao trabalhar com arrays ou objetos mais complexos.
+Reescreva o código de forma que o array global bookList não seja alterado em 
+nenhuma das funções. A função add deve adicionar o nome do livro, bookName 
+ao array passado e retornar um novo array. A função remove deve remover o 
+bookName do array passado a ela.*/
+
+//exemplo
+
+// A variável global
+const bookList = ["The Hound of the Baskervilles", "On The Electrodynamics of Moving Bodies", 
+"Philosophiæ Naturalis Principia Mathematica", "Disquisitiones Arithmeticae"];
+
+function add(arr, bookName) {
+  let newArr = [...arr]; //Copiar bookList em um novo array
+  newArr.push(bookName); //Adicionar o parametro bookName ao final do novo array 
+  return newArr; //Retornar o novo array
+}
+
+function remove(arr, bookName) {
+  let newArr = [...arr]; //Copiar bookList em um novo array
+  if (newArr.indexOf(bookName) >= 0) {
+    //Checar se o parametro bookName esta em novo array
+    newArr.splice(newArr.indexOf(bookName), 1); //Remove o parametro dado do novo array
+    return newArr; //Retorna o novo array.
+  }
+}
+
+/*---------------------------------------------------------------------------*/
