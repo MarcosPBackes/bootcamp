@@ -82,3 +82,72 @@ console.log(
 );
 
 /*---------------------------------------------------------------------------*/
+
+/*------------ENTENDER OS PERIGOS DA PROGRAMAÇAO IMPERATIVA-------------------
+Usar programação funcional é um bom hábito. Faz com que o seu código seja fácil 
+de manter e o livra de bugs sorrateiros. Mas antes de fazer a transição, vamos 
+rever uma abordagem imperativa para destacar onde pode haver problemas.
+Em português (e em vários outros idiomas), o modo verbal imperativo é usado 
+para dar ordens. Da mesma forma, o estilo imperativo em programação é um estilo 
+que dá um conjunto de instruções para um computador realizar uma tarefa.
+Essas instruções frequentemente alteram o estado do programa ao atualizar 
+variáveis globais, por exemplo. Um exemplo clássico é escrever um loop for, 
+que é explícito ao dar direções para percorrer um array. Em contrapartida, a 
+programação funcional é uma forma de programação declarativa. Você diz ao 
+computador o que quer fazer chamando um método ou função. O JavaScript oferece 
+muitos métodos predefinidos que lidam com tarefas comuns, então você não precisa 
+escrever como o computador deve executá-las. Por exemplo, em vez de usar um loop 
+for, você pode chamar o método map, que lida com os detalhes de como percorrer um 
+array. Isso ajuda a evitar erros semânticos, como os erros de "Off By One" 
+(fora por um), que foram cobertos na seção de depuração. Considere o cenário: 
+você está navegando na web com o navegador e quer rastrear as abas que você abriu. 
+Vamos tentar modelar isso usando orientação a objetos de forma simples.
+Um objeto Window (Janela) é composto de abas e normalmente há mais de uma janela 
+aberta. Os títulos de cada site aberto em cada objeto Window é armazenado em um 
+array. Depois de usar o navegador (abrindo novas abas, juntando janelas, fechando 
+abas), você quer imprimir as abas que ainda estão abertas. Abas fechadas são 
+removidas do array e novas abas são adicionadas ao fim dele (por simplicidade).*/
+
+//exemplo
+
+// tabs é um array de títulos de cada site aberto na janela
+const Window = function(tabs) {
+    this.tabs = tabs; // Mantemos um registro do array dentro do objeto
+  };
+  
+  // Quando você junta duas janelas em apenas uma
+  Window.prototype.join = function(otherWindow) {
+    this.tabs = this.tabs.concat(otherWindow.tabs);
+    return this;
+  };
+  
+  // Quando você abre uma nova aba no final
+  Window.prototype.tabOpen = function(tab) {
+    this.tabs.push('new tab'); // Vamos abrir uma nova aba por enquanto
+    return this;
+  };
+  
+  // Quando você fecha uma aba
+  Window.prototype.tabClose = function(index) {  
+  
+    const tabsBeforeIndex = this.tabs.slice(0, index); // Obtém as abas antes da aba
+    const tabsAfterIndex = this.tabs.slice(index + 1); // Obtém as abas após a aba
+  
+    this.tabs = tabsBeforeIndex.concat(tabsAfterIndex); // Junte-as  
+  
+    return this;
+   };
+  
+  // Vamos criar três janelas no navegador
+  const workWindow = new Window(['GMail', 'Inbox', 'Work mail', 'Docs', 'freeCodeCamp']); // Sua caixa de correio, unidade e outros locais de trabalho
+  const socialWindow = new Window(['FB', 'Gitter', 'Reddit', 'Twitter', 'Medium']); // Sites sociais
+  const videoWindow = new Window(['Netflix', 'YouTube', 'Vimeo', 'Vine']); // Sites de entretenimento
+  
+  // Agora, realize a abertura e o fechamento da aba, assim como outras operações
+  const finalTabs = socialWindow
+    .tabOpen() // Abra uma nova aba para memes de gato
+    .join(videoWindow.tabClose(2)) // Fechar a terceira aba na janela de vídeo e entrar
+    .join(workWindow.tabClose(1).tabOpen());
+  console.log(finalTabs.tabs);
+
+  /*---------------------------------------------------------------------------*/
