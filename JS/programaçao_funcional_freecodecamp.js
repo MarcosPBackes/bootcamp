@@ -150,4 +150,29 @@ const Window = function(tabs) {
     .join(workWindow.tabClose(1).tabOpen());
   console.log(finalTabs.tabs);
 
-  /*---------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------*/
+
+/*------EVITAR MUTAÇOES E EFEITOS COLATERAIS USANDO PROGRAMAÇAO FUNCIONAL-----
+Caso você ainda não tenha descoberto, o problema do desafio anterior é com a 
+chamada a splice na função tabClose(). Infelizmente, splice modifica o array 
+original no qual opera e, por isso, a segunda chamada usou o array alterado, 
+nos dando resultados inesperados. Este é apenas um pequeno exemplo - você 
+chama uma função e passa uma variável, array ou objeto a ela; a função 
+modifica a variável ou alguma coisa no objeto. Um dos principais princípios 
+da programação funcional é que não devemos alterar coisas. Alterações levam 
+a bugs. É mais fácil prever bugs quando se sabe que as funções não mudam 
+nada, nem mesmo os argumentos e as variáveis globais. No exemplo anterior 
+não havia nenhuma operação complicada, mas o método splice modificou o array 
+original e o resultado foi um bug. Lembre-se de que, em programação funcional, 
+modificar ou alterar coisas é chamado de mutação e a consequência é chamada 
+de efeito colateral. Idealmente, uma função deveria ser uma função pura, 
+que é uma função que não causa efeitos colaterais. Vamos tentar dominar esta 
+disciplina e não alterar nenhuma variável ou objeto em nosso código.*/
+
+let fixedValue = 4;
+
+function incrementer() {
+  return fixedValue + 1;
+}
+
+/*---------------------------------------------------------------------------*/
