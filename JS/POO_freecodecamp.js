@@ -713,3 +713,61 @@ expression (expressão de função invocada imediatamente) ou IIFE.*/
 })();
 
 /*---------------------------------------------------------------------------*/
+
+/*-----------------------USAR UMA IIFE PARA CRIAR UM MODULO------------------
+Uma expressão de função imediatamente invocada (IIFE) é frequentemente utilizada 
+para agrupar funcionalidades relacionadas para um único objeto ou módulo. Por 
+exemplo, um desafio anterior definiu dois mixins:
+Note que você possui uma expressão de função imediatamente invocada (IIFE) 
+que retorna um objeto motionModule. Esse objeto retornado contém todos os 
+comportamentos de mixin como propriedades do objeto. A vantagem do padrão 
+módulo é que todos os comportamentos de movimento podem ser embalados em 
+um único objeto que pode em seguida ser usado por outras partes do seu 
+código. Aqui está um exemplo utilizando isso:*/
+
+//SEM
+
+function glideMixin(obj) {
+  obj.glide = function() {
+    console.log("Gliding on the water");
+  };
+}
+function flyMixin(obj) {
+  obj.fly = function() {
+    console.log("Flying, wooosh!");
+  };
+}
+
+//COM
+
+let motionModule = (function () {
+  return {
+    glideMixin: function(obj) {
+      obj.glide = function() {
+        console.log("Gliding on the water");
+      };
+    },
+    flyMixin: function(obj) {
+      obj.fly = function() {
+        console.log("Flying, wooosh!");
+      };
+    }
+  }
+})();
+
+let funModule = (function (){
+  return {
+    isCuteMixin: function(obj) {
+      obj.isCute = function () {
+        return true
+      }
+    },
+    singMixin: function(obj) {
+      obj.sing = function() {
+        console.log('Singing to an awesome tune')
+      }
+    }
+  }
+})();
+
+/*---------------------------------------------------------------------------*/
