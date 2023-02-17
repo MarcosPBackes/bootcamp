@@ -399,3 +399,42 @@ const ratingsDois = watchList.map(item => ({
 //Os parenteses sao necessarios para retornar um objeto
 
 /*---------------------------------------------------------------------------*/
+
+/*-------------------------IMPLEMENTAR MAP EM UM PROTOTYPE---------------------
+Como você viu ao aplicar Array.prototype.map(), ou simplesmente map() mais cedo, 
+o método map retorna um array do mesmo tamanho que o no qual chamamos o método. 
+Ele também não altera o array original desde que a função de callback não o faça.
+Em outras palavras, map é uma função pura e a sua saída depende somente de suas 
+entradas. Além disso, ele recebe outra função como argumento. Você pode aprender 
+muito sobre o método map se você implementá-lo por conta própria. Recomenda-se 
+que você use um loop for ou o método Array.prototype.forEach(). Escreva o seu 
+próprio Array.prototype.myMap() e faça com que ele se comporte como o 
+Array.prototype.map(). Você não deve usar o método map disponibilizado. O objeto
+Array pode ser acessado dentro de myMap pelo this.*/
+
+//exemplo
+
+Array.prototype.myMap = function(callback) {
+    const newArray = [];
+    for (let i = 0; i < this.length; i++)
+    newArray.push(callback(this[i], i, this))
+    return newArray;
+  };
+//O uso de um loop “for” nos permite aplicar a função de 
+//retorno de chamada a cada item no array global e, em seguida,
+//enviar os itens modificados para o novo array vazio que é 
+//retornado no final.
+
+Array.prototype.myMap = function (callback) {
+    const newArray = [];
+    this.forEach((element, index, originalArr) =>
+      newArray.push(callback(element, index, originalArr))
+    );
+    return newArray;
+  };
+//A palavra-chave this nos dá acesso ao objeto no qual estamos chamando 
+//A partir daí, podemos usar o método forEach para adicionar elementos 
+//à matriz vazia já declarada à medida que modificamos cada elemento com 
+//o método de retorno de chamada fornecido.
+
+/*---------------------------------------------------------------------------*/
