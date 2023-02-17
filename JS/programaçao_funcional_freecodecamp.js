@@ -438,3 +438,56 @@ Array.prototype.myMap = function (callback) {
 //o método de retorno de chamada fornecido.
 
 /*---------------------------------------------------------------------------*/
+
+/*-------------USAR METODO FILTER PARA EXTRAIR DADOS DE UM ARRAY---------------
+Outra função útil de array é Array.prototype.filter(), ou simplesmente filter().
+filter chama uma função em cada elemento de um array e retorna um novo array 
+contendo apenas os elementos para os quais aquela função retorna um valor 
+verdadeiro - ou seja, um valor que retorna true se passada para o construtor 
+Boolean(). Em outras palavras, ele filtra o array de acordo com a função 
+passada a ele. Ele o faz sem alterar o array original assim como map.
+A função de callback toma três argumentos. O primeiro argumento é o elemento 
+que está a ser processado. O segundo é o índice deste elemento e o terceiro é 
+o array do qual filter foi chamado. Abaixo você vê um exemplo do filter sendo 
+usado do array users para retornar um novo array apenas com os usuários cuja 
+idade é menor que 30. O exemplo usa apenas o primeiro argumento da função de 
+callback por simplicidade.*/
+
+//exemplos
+
+const usersTres = [
+    { name: 'John', age: 34 },
+    { name: 'Amy', age: 20 },
+    { name: 'camperCat', age: 10 }
+  ];
+  
+  const usersUnder30 = usersTres.filter(user => user.age < 30);
+  console.log(usersUnder30); 
+
+  const filteredList = watchList
+  .filter(movie => {
+    //Retorna true mantem o item
+    //Retorna false rejeita o item
+    return parseFloat(movie.imdbRating) >= 8.0;
+  })
+  .map(movie => {
+    return {
+      title: movie.Title,
+      rating: movie.imdbRating
+    };
+  });
+//Primeiro, filtramos e retornamos apenas os objetos que atendem aos 
+//critérios. Neste caso, o critério é ter um imdbRating de 8,0 ou superior.
+//Em seguida, mapeamos os objetos para o formato desejado.
+
+const filteredListDois = watchList
+  .filter(movie => movie.imdbRating >= 8.0)
+  .map(movie => ({ title: movie["Title"], rating: movie["imdbRating"] }));
+console.log(filteredListDois);
+
+const filteredListTres = watchList
+  .filter(movie => movie.imdbRating >= 8.0)
+  .map(movie => ({ title: movie["Title"], rating: movie["imdbRating"] }));
+console.log(filteredListTres);
+
+/*---------------------------------------------------------------------------*/
