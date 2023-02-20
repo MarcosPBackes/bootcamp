@@ -668,7 +668,7 @@ console.log(getRating(watchList));
 /*---------------------------------------------------------------------------*/
 
 
-/*-USAQ AS FUNÇOES DE ORDEM SUPERIOR MAP, FILTER OU REDUCE PARA SOLUCIONAR UM PROBLEMA COMPLEXO-*/
+/*-USAR AS FUNÇOES DE ORDEM SUPERIOR MAP, FILTER OU REDUCE PARA SOLUCIONAR UM PROBLEMA COMPLEXO-*/
 
 /*Complete o código para a função squareList usando qualquer combinação de map(),
  filter() e reduce(). A função deve retornar uma nova matriz contendo apenas os 
@@ -684,5 +684,48 @@ console.log(getRating(watchList));
 
 const squaredIntegers = squareList([-3, 4.8, 5, 3, -3.2]);
 console.log(squaredIntegers);
+
+/*---------------------------------------------------------------------------*/
+
+/*----------ORDENAR UM ARRAY ALFABETICAMENTE USANDO O METODO SORT-------------
+O método sort consegue ordenar os elementos de um array de acordo com uma função 
+de callback.*/
+
+//exemplos
+
+function ascendingOrder(arr) {
+  return arr.sort(function(a, b) {
+    return a - b;
+  });
+}
+
+ascendingOrder([1, 5, 2, 3, 4]);//Retorna [1, 2, 3, 4, 5]
+
+function reverseAlpha(arr) {
+  return arr.sort(function(a, b) {
+    return a === b ? 0 : a < b ? 1 : -1;
+  });
+}
+
+reverseAlpha(['l', 'h', 'z', 'b', 's']);//Retorna ['z', 's', 'l', 'h', 'b']
+
+/*O método de ordenação padrão do JavaScript é por valores de ponto Unicode, 
+o que pode nos dar resultados inesperados. Por isso você é encorajado a 
+providenciar uma função de callback para especificar como a ordenação deve 
+ocorrer. Quando tal função callback (comumente chamada de compareFunction, 
+ou função de comparação) é providenciada, os elementos do array são 
+ordenados de acordo com o valor de retorno dela: se compareFunction(a,b) 
+retornar um valor menor que 0 para dois elementos a e b, então a virá 
+antes de b. Se compareFunction(a,b) retornar um valor maior que 0 para 
+dois elementos a e b, então b virá antes de a. Finalmente, se 
+compareFunction(a,b) retornar 0, então a e b não trocarão de lugar entre si.*/
+
+function alphabeticalOrder(arr) {
+  return arr.sort(function(a, b) {
+    return a === b ? 0 : a < b ? -1 : 1;
+  });
+}
+
+alphabeticalOrder(["a", "d", "c", "a", "z", "g"]);
 
 /*---------------------------------------------------------------------------*/
