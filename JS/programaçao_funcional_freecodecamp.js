@@ -573,3 +573,24 @@ const inputCities = ["Chicago", "Delhi", "Islamabad", "London", "Berlin"];
 nonMutatingSplice(inputCities);
 
 /*---------------------------------------------------------------------------*/
+
+/*---------------COMBINAR DOIS ARRAYS USANDO O METODO CONCAT------------------
+Concatenação significa juntar itens de ponta a ponta. Em JavaScript, strings 
+e arrays possuem o método concat e ele funciona igualmente para os dois. Para 
+arrays, o método é chamado em uma instância e um segundo array é passado como 
+argumento. concat então junta os dois arrays em um só. O método retorna um 
+novo array e deixa os dois originais intactos.*/
+
+//exemplos
+
+[1, 2, 3].concat([4, 5, 6]);
+
+function nonMutatingConcat(original, attach) {
+  return original.concat(attach);
+}
+
+const first = [1, 2, 3];
+const second = [4, 5];
+nonMutatingConcat(first, second);
+
+/*---------------------------------------------------------------------------*/
