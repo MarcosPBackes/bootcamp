@@ -750,3 +750,25 @@ function nonMutatingSort(arr) {
 nonMutatingSort(globalArray);
 
 /*---------------------------------------------------------------------------*/
+
+/*-----------DIVIDIR UMA STRING EM UM ARRAY USANDO O METODO SPLIT------------
+O método split divide uma string em um array de strings. Ela recebe um 
+delimitador, que pode ser um caractere ou uma expressão regular, como argumento
+para dividir a string. Por exemplo, se o delimitador for um espaço, você recebe 
+um array de palavras. Se o delimitador for a string vazia, você recebe um array 
+contendo os caracteres da string.*/
+
+//exemplos
+
+const str = "Hello World";
+const bySpace = str.split(" ");//Recebe ["Hello", "World"]
+
+const otherString = "How9are7you2today";
+const byDigits = otherString.split(/\d/);//Recebe ["How", "are", "you", "today"]
+
+function splitify(str) {
+  return str.split(/\W/);//Corresponde a qualquer caractere não-palavra
+}
+splitify("Hello World,I-am code");
+
+/*---------------------------------------------------------------------------*/
