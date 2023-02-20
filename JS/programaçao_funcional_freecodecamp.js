@@ -666,3 +666,23 @@ function getRating(watchList) {
 console.log(getRating(watchList));
 
 /*---------------------------------------------------------------------------*/
+
+
+/*-USAQ AS FUNÇOES DE ORDEM SUPERIOR MAP, FILTER OU REDUCE PARA SOLUCIONAR UM PROBLEMA COMPLEXO-*/
+
+/*Complete o código para a função squareList usando qualquer combinação de map(),
+ filter() e reduce(). A função deve retornar uma nova matriz contendo apenas os 
+ inteiros positivos (números decimais não são inteiros) elevados ao quadrado 
+ quando uma matriz de números reais é passada para ela. Um exemplo de array 
+ de números reais é [-3, 4.8, 5, 3, -3.2].*/
+
+ const squareList = (arr) => {
+  return arr
+          .filter(num => num > 0 && num % parseInt(num) === 0)
+          .map(num => Math.pow(num, 2));
+};
+
+const squaredIntegers = squareList([-3, 4.8, 5, 3, -3.2]);
+console.log(squaredIntegers);
+
+/*---------------------------------------------------------------------------*/
