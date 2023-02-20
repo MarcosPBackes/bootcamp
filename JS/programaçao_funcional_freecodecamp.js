@@ -857,3 +857,41 @@ function checkPositiveSome(arr) {
 checkPositiveSome([1, 2, 3, -4, 5]);
 
 /*---------------------------------------------------------------------------*/
+
+/*------------------INICIAR COM CURRYENG E APLICAÇAO PARCIAL-------------------
+A aridade de uma função é o número de argumentos que ela toma. Realizar currying 
+em uma função significa transformar uma função de aridade N em N funções de aridade 1.
+Em outras palavras, a função é reestruturada para que ela receba apenas um argumento
+e retorne outra função que recebe o próximo argumento e assim por diante.
+Isso é útil em seu programa quando você não pode fornecer todos os argumentos 
+para uma função de uma só vez. Você pode salvar cada chamada de função em uma 
+variável, que será uma referência à função retornada que recebe o próximo argumento 
+quando ele estiver disponível*/
+
+//exemplos
+
+function unCurried(x, y) {
+  return x + y;
+}
+
+function curried(x) {
+  return function(y) {
+    return x + y;
+  }
+}
+
+const curried = x => y => x + y
+
+curried(1)(2)//Retorna 3
+
+function add(x) {
+ return function(y) {
+    return function(z) {
+      return x + y + z;
+    };
+  };
+}
+
+add(10)(20)(30);
+
+/*---------------------------------------------------------------------------*/
