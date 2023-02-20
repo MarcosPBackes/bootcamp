@@ -812,3 +812,25 @@ function urlSlug(title) {
 var winterComing = urlSlug(globalTitle); //Recebe "winter-is-coming"
 
 /*---------------------------------------------------------------------------*/
+
+/*--USAR O METODOD EVERY PARA CHECAR SE TODOS OS ELMENTOS EM UM ARRAY ATENDEM A UM CRITERIO--
+O método every funciona verificando se todos os elementos de um array passam em um teste. 
+Ele retorna um booleano: true se todos os valores atendem ao critério e false caso contrário.*/
+
+//exemplos
+
+const numbers = [1, 5, 8, 0, 10, 11];
+
+numbers.every(function(currentValue) {
+  return currentValue < 10;//Retorna menores que 10
+});
+
+function checkPositive(arr) {
+  return arr.every(function(valor) {
+    return valor > 0;//Retorna maior que 0
+  })
+}
+
+checkPositive([1, 2, 3, -4, 5]);
+
+/*---------------------------------------------------------------------------*/
