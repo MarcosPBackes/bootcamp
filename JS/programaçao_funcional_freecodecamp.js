@@ -594,3 +594,22 @@ const second = [4, 5];
 nonMutatingConcat(first, second);
 
 /*---------------------------------------------------------------------------*/
+
+/*---ADICIONAR ELEMENTOS AO FINAL DE UM ARRAY USANDO CONCAT EM VEZ DE PUSH----
+Programação funcional é basicamente criar e utilizar funções que não modificam 
+os seus argumentos. O último desafio mostrou como usar o método concat para 
+criar um novo array a partir da mescla de outros sem modificar os originais. 
+Compare os métodos concat e push. O push adiciona itens ao final do mesmo 
+array a partir do qual ele é chamado. Ele modifica o array.*/
+
+//exemplo
+
+function nonMutatingPush(original, newItem) {
+  return original.concat(newItem);
+}
+
+const firstCat = [1, 2, 3];
+const secondCat = [4, 5];
+nonMutatingPush(firstCat, secondCat);
+
+/*---------------------------------------------------------------------------*/
