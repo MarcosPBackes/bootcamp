@@ -729,3 +729,24 @@ function alphabeticalOrder(arr) {
 alphabeticalOrder(["a", "d", "c", "a", "z", "g"]);
 
 /*---------------------------------------------------------------------------*/
+
+/*----------RETORNAR UM ARRAY ORDENADO SEM MODIFICAR O ARRAY ORIGINAL----------
+Um efeito colateral do método sort é que ele altera a ordem dos elementos no 
+array original. Em outras palavras, o array sofre uma mutação. Uma forma de 
+evitar isto é primeiro concatenar um array vazio ao array a ordenar (não 
+esqueça que slice e concat retornam um novo array) e, então, executar o 
+método sort no novo array.*/
+
+//exemplo
+
+const globalArray = [5, 6, 3, 2, 9];
+
+function nonMutatingSort(arr) {
+  return [].concat(arr).sort(function(a, b) {
+    return a - b;
+  });
+}
+
+nonMutatingSort(globalArray);
+
+/*---------------------------------------------------------------------------*/
