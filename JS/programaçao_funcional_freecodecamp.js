@@ -491,3 +491,31 @@ const filteredListTres = watchList
 console.log(filteredListTres);
 
 /*---------------------------------------------------------------------------*/
+
+/*-----------------IMPLEMENTAR O METODO FILTER EM UM PROTOTIPO-----------------
+Você pode aprender muito sobre o método filter se você implementá-lo por conta 
+própria. Recomenda-se que você use um loop for ou o método Array.prototype.forEach().*/
+
+//exemplos
+
+Array.prototype.myFilter = function(callback) {
+  const newArray = [];
+  for (let i = 0; i < this.length; i++) {
+    if (Boolean(callback(this[i], i, this)) === true) {
+      newArray.push(this[i]);
+    }
+  }
+  return newArray;
+};
+
+Array.prototype.myFilterDois = function (callback) {
+  const newArray = [];
+  for (let i = 0; i < this.length; i++) {
+    if (callback(this[i], i, this) == true) {
+      newArray.push(this[i]);
+    }
+  }
+  return newArray;
+};
+
+/*---------------------------------------------------------------------------*/
