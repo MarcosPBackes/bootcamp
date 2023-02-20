@@ -519,3 +519,27 @@ Array.prototype.myFilterDois = function (callback) {
 };
 
 /*---------------------------------------------------------------------------*/
+
+/*-----------------RETORNAR PARTE DE UM ARRAY USANDO SLICE--------------------
+O método slice retorna uma fatia de elementos de um array. Ele pode receber dois 
+argumentos, sendo o primeiro o índice de onde começar a fatiar e o segundo de 
+onde terminar. O índice de fim não é inclusivo. Se os argumentos não forem 
+providenciados, o padrão é começar pelo início e terminar no fim, ou seja, é 
+uma forma simples de criar uma cópia do array inteiro. O método slice retorna 
+um novo array sem modificar o original.*/
+
+//exemplos
+
+const arr = ["Cat", "Dog", "Tiger", "Zebra"];
+const newArray = arr.slice(1, 3);
+
+function sliceArray(anim, beginSlice, endSlice) {
+  const nArray = anim.slice(beginSlice, endSlice);
+  return nArray;
+  //return anim.slice(beginSlice, endSlice)
+}
+
+const inputAnim = ["Cat", "Dog", "Tiger", "Zebra", "Ant"];
+sliceArray(inputAnim, 1, 3);
+
+/*---------------------------------------------------------------------------*/
