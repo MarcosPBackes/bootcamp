@@ -785,3 +785,30 @@ const arrJoinDois = ["Hello", "World"];
 const strJoinDois = arrJoinDois.join(" ");//Corresponde a qualquer caractere não-palavra
 
 /*---------------------------------------------------------------------------*/
+
+/*-----USAR  PROGRAMAÇAO FUNCIONAL PARA CONVERTER STRINGS EM SLUGS DE URL------
+Os últimos desafios cobriram uma série de métodos úteis de strings e arrays que 
+usam princípios de programação funcional. Também aprendemos o poderoso método 
+reduce, que é usado para reduzir arrays a um único valor. Seja para calcular 
+médias ou para ordenação, qualquer operação de array pode ser feita ao usá-lo. 
+Lembre-se de que map e filter são casos especiais de reduce.
+Vamos combinar o que aprendemos para resolver um problema prático.
+Muitos sites de gerenciamento de conteúdo (content management sites, CMS) usam 
+o título das publicações como parte da URL para maior legibilidade. Por exemplo, 
+se você publicar um artigo no Medium chamado Stop Using Reduce, é provável que 
+o URL use o título em sua composição: .../stop-using-reduce.*/
+
+//exemplo
+
+var globalTitle = "Winter Is Coming";
+function urlSlug(title) {
+  return title
+    .toLowerCase()
+    .trim()
+    .split(/\s+/)
+    .join("-");
+}
+
+var winterComing = urlSlug(globalTitle); //Recebe "winter-is-coming"
+
+/*---------------------------------------------------------------------------*/
