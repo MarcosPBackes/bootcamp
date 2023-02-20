@@ -543,3 +543,33 @@ const inputAnim = ["Cat", "Dog", "Tiger", "Zebra", "Ant"];
 sliceArray(inputAnim, 1, 3);
 
 /*---------------------------------------------------------------------------*/
+
+/*-------REMOVER ELEMENTOS DE UM ARRAY USANDOD SLICE E VEZ DE SPLICE---------
+É comum precisar remover alguns itens de um array e manter o resto. O 
+JavaScript oferece o método splice, que recebe uma posição de onde começar 
+a remover e o número de elementos para remover como argumentos para isso. Se 
+o segundo argumento for omitido, o padrão é remover todos os itens até o final. 
+No entanto, o método splice modifica o array original em que é chamado. Exemplo:*/
+
+const cities = ["Chicago", "Delhi", "Islamabad", "London", "Berlin"];
+cities.splice(3, 1);
+
+/*Aqui splice retorna a string London e a remove do array cities. cities terá o valor 
+["Chicago", "Delhi", "Islamabad", "Berlin"].
+
+Como vimos no último desafio, o método slice não altera o array original; ele retorna
+um novo array que pode ser armazenado em uma variável. Lembre-se de que o método 
+slice toma dois argumentos para os índices de início e fim e retorna um array com 
+os elementos presentes entre esses índices (o índice de fim é não-inclusivo). Usar 
+o método slice em vez do splice ajuda a evitar alterações em arrays e, portanto, 
+efeitos colaterais.*/
+
+function nonMutatingSplice(cities) {
+  return cities.slice(0, 3);
+
+}
+
+const inputCities = ["Chicago", "Delhi", "Islamabad", "London", "Berlin"];
+nonMutatingSplice(inputCities);
+
+/*---------------------------------------------------------------------------*/
