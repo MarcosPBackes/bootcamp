@@ -772,3 +772,16 @@ function splitify(str) {
 splitify("Hello World,I-am code");
 
 /*---------------------------------------------------------------------------*/
+
+/*---------TRANSFORMAR UM ARRAY EM UMA STRING USANDO O METODO JOIN-------------
+O método join é usado para juntar os elementos de um array, resultando em uma 
+string. Ele recebe um delimitador como argumento, que é usado para conectar 
+os elementos na string.*/
+
+const arrJoin = ["Hello", "World"];
+const strJoin = arrJoin.join(" ");//Recebe Hello World
+
+const arrJoinDois = ["Hello", "World"];
+const strJoinDois = arrJoinDois.join(" ");//Corresponde a qualquer caractere não-palavra
+
+/*---------------------------------------------------------------------------*/
