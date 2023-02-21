@@ -62,3 +62,49 @@ return newArr;
 }
 
 /*---------------------------------------------------------------------------*/
+
+/*------------------------------PROCURAR E DESTRUIR---------------------------
+Você receberá um array inicial (o primeiro argumento na função destroyer), 
+seguido por um ou mais argumentos. Remova todos os elementos da matriz inicial 
+que são do mesmo valor que esses argumentos.*/
+
+//exemplos
+
+function destroyer(arr) {
+    const valsToRemove = Object.values(arguments).slice(1);
+    const filteredArray = [];
+  
+    for (let i = 0; i < arr.length; i++) {
+      let removeElement = false;
+      for (let j = 0; j < valsToRemove.length; j++) {
+        if (arr[i] === valsToRemove[j]) {
+          removeElement = true;
+        }
+      }
+      if (!removeElement) {
+        filteredArray.push(arr[i]);
+      }
+    }
+    return filteredArray;
+}
+
+/*Crie uma matriz de valsToRemove usando Object.values(arguments).
+slice(1) e armazene-a na variável valsToRemove. Usaremos isso para verificar arr.
+Inicie um loop for básico para iterar através de arr. Aninhe outro loop for dentro 
+do primeiro, alterando a variável inteira j e arr para valsToRemove. Este segundo 
+loop irá iterar por meio de valsToRemove .
+No segundo loop, crie uma instrução if, verificando rigorosamente === se o valor 
+atual de arr[i] é igual a valsToRemove[j].
+Se o valor no índice atual for igual em ambas as matrizes, deixe removeElement 
+para true removê-lo de arr.
+Se o valor não estiver sinalizado para remoção, adicione-o ao filterArray.
+Fora dos loops aninhados, retorne o filterArray*/
+
+function destroyerSpread(arr, ...valsToRemove) {
+    return arr.filter(elem => !valsToRemove.includes(elem));
+}
+
+//Usando spread para recuperar os argumentos
+//Retorna o array filtrado usando include
+
+/*---------------------------------------------------------------------------*/
