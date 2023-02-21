@@ -858,7 +858,7 @@ checkPositiveSome([1, 2, 3, -4, 5]);
 
 /*---------------------------------------------------------------------------*/
 
-/*------------------INICIAR COM CURRYENG E APLICAÇAO PARCIAL-------------------
+/*------------------INICIAR COM CURRYNG E APLICAÇAO PARCIAL-------------------
 A aridade de uma função é o número de argumentos que ela toma. Realizar currying 
 em uma função significa transformar uma função de aridade N em N funções de aridade 1.
 Em outras palavras, a função é reestruturada para que ela receba apenas um argumento
