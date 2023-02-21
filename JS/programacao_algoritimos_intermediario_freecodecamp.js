@@ -25,3 +25,40 @@ return sumBetween;
 }
 
 /*---------------------------------------------------------------------------*/
+
+/*-------------------------DIFERENCIAR DOIS ARRAYS-----------------------------
+Compare dois arrays e retorne um novo array com qualquer item encontrado em 
+apenas um dos dois arrays passados, mas não ambos. Em outras palavras, retorne 
+a diferença simétrica de dois arrays. Observação: você pode retornar o array 
+com seus elementos em qualquer ordem.*/
+
+//exemplos
+
+function diffArraySpread(arr1, arr2) {
+    return [...diff(arr1, arr2), ...diff(arr2, arr1)];
+  
+    function diff(a, b) {
+      return a.filter(item => b.indexOf(item) === -1);
+    }
+  }
+
+function diffArray(arr1, arr2) {
+const newArr = [];
+
+function onlyInFirst(first, second) {
+    //Loop para procurar elementos inexistentes no outro array
+    for (let i = 0; i < first.length; i++) {
+    if (second.indexOf(first[i]) === -1) {
+        //Adicionando os caracteres unicos em um novo array
+        newArr.push(first[i]);
+    }
+    }
+}
+
+onlyInFirst(arr1, arr2);
+onlyInFirst(arr2, arr1);
+
+return newArr;
+}
+
+/*---------------------------------------------------------------------------*/
