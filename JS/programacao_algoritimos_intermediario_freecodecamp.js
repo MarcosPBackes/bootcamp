@@ -228,3 +228,47 @@ function translatePigLatinIf(str) {
 }
 
 /*---------------------------------------------------------------------------*/
+
+/*------------------------------PROCURAR E SUBSTITUIR-------------------------
+Realize uma busca e substitua na frase usando os argumentos fornecidos e retorne 
+a nova frase. O primeiro argumento é a frase para realizar a busca e substituir.
+O segundo argumento é a palavra que você substituirá (antes).
+O terceiro argumento é com o que você vai substituir o segundo argumento (depois).
+Observação: preserve a capitalização do primeiro caractere na palavra original 
+quando você estiver substituindo. Por exemplo, se você quiser substituir a palavra 
+Book com a palavra dog, deve ser substituído com Dog*/
+
+//exemplos
+
+function myReplaceIf(str, before, after) {
+  //Encontre o índice onde before está na string
+  var index = str.indexOf(before);
+  //Checa se a primeira letra esta em maiuscula ou nao
+  if (str[index] === str[index].toUpperCase()) {
+    //Altera a palavra posterior para maiuscula antes de usa-la
+    after = after.charAt(0).toUpperCase() + after.slice(1);
+  } else {
+    //Altera a palavra posterior para maiuscula antes de usa-la
+    after = after.charAt(0).toLowerCase() + after.slice(1);
+  }
+  //Agora substitua o str original pelo editado
+  str = str.replace(before, after);
+
+  return str;
+}
+
+function myReplace(str, before, after) {
+  // Verifique se o primeiro caractere do argumento "before" é uma letra maiúscula ou minúscula e altere o primeiro caractere do argumento "after" para corresponder ao caso
+  if (/^[A-Z]/.test(before)) {
+    after = after[0].toUpperCase() + after.substring(1)
+  } else {
+    after = after[0].toLowerCase() + after.substring(1)
+  }
+
+  //string de retorno com o argumento "before" substituído pelo argumento "after" (com maiúsculas e minúsculas)
+  return str.replace(before, after);
+}
+
+myReplace("A quick brown fox jumped over the lazy dog", "jumped", "leaped");
+
+/*---------------------------------------------------------------------------*/
