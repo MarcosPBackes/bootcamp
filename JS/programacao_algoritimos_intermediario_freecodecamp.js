@@ -108,3 +108,58 @@ function destroyerSpread(arr, ...valsToRemove) {
 //Retorna o array filtrado usando include
 
 /*---------------------------------------------------------------------------*/
+
+/*----------------------------LOCALIZARPOR VALOR------------------------------
+Faça uma função que olha através de um array de objetos (primeiro argumento) e 
+retorna um array de todos os objetos que têm pares de nome e valor correspondentes 
+(segundo argumento). Cada par de nome e valor do objeto fonte tem que estar 
+presente no objeto da coleção se ele for ser incluído no array retornado.*/
+
+//exemplos
+
+function whatIsInAName(collection, source) { 
+  const souceKeys = Object.keys(source);
+  
+  return collection.filter(obj => souceKeys//Filtrar collection
+      //Mapeia as chaves e retorna true ou false
+      .map(key => obj.hasOwnProperty(key) && obj[key] === source[key])
+      .reduce((a, b) => a && b));//Reduzimos os valores booleanos mapeados 
+                                 //para um único booleano que indica se todas 
+                                 //as srcKeys passam pelas condições verificadas acima.
+}
+
+whatIsInAName(
+  [
+    { first: "Romeo", last: "Montague" },
+    { first: "Mercutio", last: null },
+    { first: "Tybalt", last: "Capulet" }
+  ],
+  { last: "Capulet" }
+);
+
+function whatIsInAName(collection, source) {  
+  const souceKeys = Object.keys(source);
+
+  // filter the collection
+  return collection.filter(obj => {//Filtrar o array
+    for (let i = 0; i < souceKeys.length; i++) {//Loop for para passar por todos os itens
+      if (!obj.hasOwnProperty(souceKeys[i]) ||          //Verificar se obj nao possui a chave 
+          obj[souceKeys[i]] !== source[souceKeys[i]]) { //e se o valor da propeiedade nao corresponde ao valor
+        return false;//Retorna false se a instruçao for correta
+      }
+    }
+    return true;
+  });
+}
+
+// test here
+whatIsInAName(
+  [
+    { first: "Romeo", last: "Montague" },
+    { first: "Mercutio", last: null },
+    { first: "Tybalt", last: "Capulet" }
+  ],
+  { last: "Capulet" }
+);
+
+/*---------------------------------------------------------------------------*/
