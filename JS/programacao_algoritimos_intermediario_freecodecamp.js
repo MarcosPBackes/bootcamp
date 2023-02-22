@@ -163,3 +163,29 @@ whatIsInAName(
 );
 
 /*---------------------------------------------------------------------------*/
+
+/*----------------------------------HIFENIZAR--------------------------------
+Converta uma string transformado os espaços em hifens. Casos espinais são 
+todas-as-palavras-minúsculas-unidas-por-traços.*/
+
+//exemplos
+
+function spinalCase(str) {
+  return str  
+  .split(/\s|_|(?=[A-Z])/)//\s espaço em branco, _ caractere sublinhado, (?=[A-Z]) seguido por maiuscula
+  .join("-")//junta usando hifen -
+  .toLowerCase();//Tudo minusculo
+}
+
+function spinalCaseAlpha(str) {
+  //Variavel para espaços em  branco e underscore
+  var regex = /\s+|_+/g;
+  
+  //Remova minusculas por maiusculas
+  str = str.replace(/([a-z])([A-Z])/g, "$1 $2");
+
+  //Remova espaço e underscore por -
+  return str.replace(regex, "-").toLowerCase();//Mudar para minisculo
+}
+
+/*---------------------------------------------------------------------------*/
