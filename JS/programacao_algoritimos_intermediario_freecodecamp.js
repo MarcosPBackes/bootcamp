@@ -189,3 +189,42 @@ function spinalCaseAlpha(str) {
 }
 
 /*---------------------------------------------------------------------------*/
+
+/*------------------------------USAR O PIG LATIN------------------------------
+Pig Latin é uma forma de alterar palavras inglesas. As regras são as seguintes:
+- Se uma palavra começar com uma consoante, tire a primeira consoante ou grupo 
+de consoantes, mova-a para o final da palavra e adicione ay a ela.
+- Se uma palavra começar com uma vogal, basta adicionar way no final.*/
+
+//exemplos
+
+function translatePigLatin(str) {
+  return str
+    .replace(/^[aeiou]\w*/, "$&way")//Verifica se primeira letra e consoante e adiciona "way" ao final
+    .replace(/(^[^aeiou]+)(\w*)/, "$2$1ay");//verifica se a primeira letra e consoante, move para o final da palavra adicionando "ay"
+}
+
+function translatePigLatinIf(str) {
+  //Variaveis a ser usadas
+  var pigLatin = "";
+  var regex = /[aeiou]/gi;
+
+  //Checa se o primeiro caracter e um vogal
+  if (str[0].match(regex)) {
+    pigLatin = str + "way";//adiciona way
+  } else if (str.match(regex) === null) {
+    //Checa se tem apenas consoantes
+    pigLatin = str + "ay";//adiciona ay
+  } else {
+    //Procura quantas consoantes tem antes da primeira vogal
+    var vowelIndice = str.indexOf(str.match(regex)[0]);
+
+    //Pega a string da primeira vogal até o último caractere
+    //então adicione as consoantes que foram omitidas anteriormente e adicione a terminação.
+    pigLatin = str.substr(vowelIndice) + str.substr(0, vowelIndice) + "ay";
+  }
+
+  return pigLatin;
+}
+
+/*---------------------------------------------------------------------------*/
