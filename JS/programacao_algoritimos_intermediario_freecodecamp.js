@@ -504,3 +504,18 @@ function steamrollArray(arr) {
 };
 
 /*---------------------------------------------------------------------------*/
+
+/*-------------------TRANSFORMAR DE BINARIO EM S TRING------------------------
+Retorne uma frase traduzida para o inglês da string binária passada.
+A string binária será separada por espaço.*/
+
+function binaryAgent(str) {
+  let binaryArray = str.split(" ");
+  let message = "";
+  for (let i = 0; i < binaryArray.length; i++) {
+    message += String.fromCharCode(parseInt(binaryArray[i], 2));
+  }
+  return message;
+}
+
+/*---------------------------------------------------------------------------*/
