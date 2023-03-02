@@ -272,3 +272,40 @@ function myReplace(str, before, after) {
 myReplace("A quick brown fox jumped over the lazy dog", "jumped", "leaped");
 
 /*---------------------------------------------------------------------------*/
+
+/*-------------------------------PAREAR DNA-----------------------------------
+Os pares de fileiras de DNA são constituídos por pares de bases nitrogenadas. 
+Os pares de bases são representados pelos caracteres AT e CG, que formam os 
+blocos de construção da dupla hélice do DNA. A fileira do DNA está sem o 
+elemento de que faz par com ele. Escreva uma função que corresponda aos 
+pares de base que faltam para a fileira de DNA fornecida. Para cada caractere 
+na string fornecida, encontre o caractere de par de bases. Retorne os 
+resultados em um array bidimensional.
+Por exemplo, para a entrada GCG, retorne [["G", "C"], ["C","G"], ["G", "C"]]*/
+
+function encontrarParesDeBases(fileiraDNA) {
+  // Cria um objeto para mapear os pares de bases nitrogenadas
+  const paresDeBases = {
+    A: "T",
+    T: "A",
+    C: "G",
+    G: "C"
+  };
+
+  // Converte a string de DNA em um array para percorrer os caracteres
+  const caracteresDNA = fileiraDNA.split("");
+  
+  // Cria um array vazio para armazenar os pares de bases nitrogenadas
+  const paresEncontrados = [];
+
+  // Itera sobre cada caractere da string DNA e encontra seu par de base
+  for (let i = 0; i < caracteresDNA.length; i++) {
+    const par = [caracteresDNA[i], paresDeBases[caracteresDNA[i]]];
+    paresEncontrados.push(par);
+  }
+
+  // Retorna o array bidimensional com os pares de bases nitrogenadas encontrados
+  return paresEncontrados;
+}
+
+/*---------------------------------------------------------------------------*/
