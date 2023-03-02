@@ -535,3 +535,44 @@ function truthCheck(collection, pre) {
 }
 
 /*---------------------------------------------------------------------------*/
+
+/*--------------------------USAR ARGUMENTOS OPCIONAIS--------------------------
+Crie uma função que some dois argumentos juntos. Se apenas um argumento for 
+fornecido, então retorne uma função que espera um argumento e retorna a sua soma.
+Por exemplo, addTogether(2, 3) deve retornar 5 e addTogether(2) deve retornar uma 
+função. Chamar essa função retornada com um argumento retornará a soma:*/
+
+function addTogether() {
+  // Verifica se todos os argumentos são números
+  const areNumbers = [...arguments].every(arg => typeof arg === "number");
+  
+  // Se não for, retorna undefined
+  if (!areNumbers) {
+    return undefined;
+  }
+  
+  // Se houver dois argumentos, retorna a soma
+  if (arguments.length === 2) {
+    return arguments[0] + arguments[1];
+  }
+  
+  // Se houver apenas um argumento, retorna uma função
+  if (arguments.length === 1) {
+    const arg1 = arguments[0];
+    
+    // Verifica se o argumento é um número
+    if (typeof arg1 !== "number") {
+      return undefined;
+    }
+    
+    // Retorna a função que espera um argumento e retorna a soma
+    return function(arg2) {
+      if (typeof arg2 !== "number") {
+        return undefined;
+      }
+      return arg1 + arg2;
+    }
+  }
+}
+
+/*---------------------------------------------------------------------------*/
