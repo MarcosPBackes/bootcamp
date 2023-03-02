@@ -483,3 +483,24 @@ function dropElements(arr, func) {
 }
 
 /*---------------------------------------------------------------------------*/
+
+/*-----------------------------USAR O ROLO COMPRESSOR--------------------------
+Achate um array aninhado. Você deve lidar com diferentes níveis de aninhamento.*/
+
+function steamrollArray(arr) {
+  const flattenedArray = [];
+  // Loop sobre o conteúdo do array
+  for (let i = 0; i < arr.length; i++) {
+    if (Array.isArray(arr[i])) {
+      // Achata recursivamente entradas que são arrays
+      // e empurra para o flattenedArray
+      flattenedArray.push(...steamrollArray(arr[i]));
+    } else {
+      // Copia conteúdos que não são arrays
+      flattenedArray.push(arr[i]);
+    }
+  }
+  return flattenedArray;
+};
+
+/*---------------------------------------------------------------------------*/
