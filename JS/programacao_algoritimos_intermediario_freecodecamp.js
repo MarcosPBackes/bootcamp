@@ -430,3 +430,35 @@ function isPrime(n) {
 }
 
 /*---------------------------------------------------------------------------*/
+
+/*-------------------ENCONTRAR O MENOR MULTIPLO COMUM-------------------------
+Encontre o menor múltiplo comum dos parâmetros fornecidos que podem ser divididos 
+sem resto por ambos, bem como por todos os números sequenciais no intervalo entre 
+esses parâmetros. O intervalo será um array de dois números que não estará 
+necessariamente em ordem numérica. Por exemplo, se forem dados 1 e 3, encontre o 
+menor múltiplo comum de 1 e 3 que também é divisível por todos os números entre 
+1 e 3. A resposta aqui seria 6.*/
+
+function smallestCommons(arr) {
+  function gcd(a, b) {
+    if (b === 0) {
+      return a;
+    } else {
+      return gcd(b, a % b);
+    }
+  }
+
+  function lcm(a, b) {
+    return (a * b) / gcd(a, b);
+  }
+
+  arr = arr.sort((a, b) => a - b);
+  let multiple = arr[0];
+  for (let i = arr[0] + 1; i <= arr[1]; i++) {
+    multiple = lcm(multiple, i);
+  }
+
+  return multiple;
+}
+
+/*---------------------------------------------------------------------------*/
