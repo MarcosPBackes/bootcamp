@@ -349,3 +349,21 @@ function uniteUnique(...arr) {
 }
 
 /*---------------------------------------------------------------------------*/
+
+/*---------------------------CONVERTER ENTIDADES HTML------------------------
+Converta os caracteres &, <, >, " (aspas duplas) e ' (aspas simples), em uma 
+string para suas entidades HTML correspondentes.*/
+
+function convertHTML(str) {
+  // Substitui os caracteres especiais por suas entidades HTML correspondentes
+  str = str.replace(/&/g, "&amp;")
+           .replace(/</g, "&lt;")
+           .replace(/>/g, "&gt;")
+           .replace(/"/g, "&quot;")
+           .replace(/'/g, "&apos;");
+  
+  // Retorna a string convertida
+  return str;
+}
+
+/*---------------------------------------------------------------------------*/
