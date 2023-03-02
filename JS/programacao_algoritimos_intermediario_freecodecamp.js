@@ -328,3 +328,24 @@ function fearNotLetter(str) {
 }
 
 /*---------------------------------------------------------------------------*/
+
+/*-----------------------------------UNIR EM ORDEM---------------------------
+Escreva uma função que recebe dois ou mais arrays e retorne um novo array de 
+calores únicos na ordem do array original fornecido.
+Em outras palavras, todos os valores presentes de todos os arrays devem ser 
+incluídos na sua ordem original, mas sem valores duplicados no array final.
+Os números únicos devem ser ordenados pela sua ordem original, mas o array 
+final não deve ser ordenado em ordem numérica.*/
+
+function uniteUnique(...arr) {
+  // Une todos os arrays em um único array
+  const flatArr = arr.reduce((acc, curr) => acc.concat(curr), []);
+  
+  // Filtra apenas os valores únicos do array
+  const uniqueArr = flatArr.filter((value, index, array) => array.indexOf(value) === index);
+  
+  // Retorna o array com valores únicos em sua ordem original
+  return uniqueArr;
+}
+
+/*---------------------------------------------------------------------------*/
