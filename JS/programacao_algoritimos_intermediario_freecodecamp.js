@@ -367,3 +367,31 @@ function convertHTML(str) {
 }
 
 /*---------------------------------------------------------------------------*/
+
+/*--------------SOMAR TODOS OS NUMEROS IMPARES DE FIBONACCI------------------
+Dado um num inteiro e positivo, retorne a soma de todos os números ímpares 
+Fibonacci menores que ou iguais a num. Os dois primeiros números na sequência 
+de Fibonacci são 0 e 1. Todo número adicional na sequência é a soma dos dois 
+números anteriores. Os sete primeiros números da sequência de Fibonacci 
+são 0, 1, 1, 2, 3, 5 e 8. Por exemplo, sumFibs(10) deve retornar 10 porque 
+todos os números ímpares de Fibonacci menores ou iguais a 10 são 1, 1, 3 e 5.*/
+
+function sumFibs(num) {
+  let sum = 0;
+  let prev = 0;
+  let curr = 1;
+  
+  while (curr <= num) {
+    if (curr % 2 !== 0) {
+      sum += curr;
+    }
+    
+    const next = prev + curr;
+    prev = curr;
+    curr = next;
+  }
+  
+  return sum;
+}
+
+/*---------------------------------------------------------------------------*/
