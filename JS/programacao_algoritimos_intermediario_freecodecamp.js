@@ -624,3 +624,30 @@ const Person = function(firstAndLast) {
 const bob = new Person('Bob Ross');
 
 /*---------------------------------------------------------------------------*/
+
+/*----------------------------MAPEAR ORBITAS----------------------------------
+De acordo com a Terceira Lei de Kepler, o período orbital T
+de dois pontos de massa orbitando uma à outra em uma órbita circular ou elíptica é:
+Retorna um novo array que transforma a altitude média dos elementos em seus períodos 
+órbita (em segundos). O array conterá objetos no formato {name: 'name', avgAlt: avgAlt}.
+Os valores devem estar arredondados para o número inteiro mais próximo. O corpo sendo 
+orbitado é a Terra. O raio da terra é 6367,4447 quilômetros, e o valor de GM da 
+térra é 398600,4418 km3s-2.*/
+
+function orbitalPeriod(arr) {
+  const GM = 398600.4418; // km3s-2
+  const earthRadius = 6367.4447; // km
+  const result = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    const { name, avgAlt } = arr[i];
+    const a = earthRadius + avgAlt;
+    const T = 2 * Math.PI * Math.sqrt(Math.pow(a, 3) / GM);
+    const period = Math.round(T);
+    result.push({ name, orbitalPeriod: period });
+  }
+
+  return result;
+}
+
+/*---------------------------------------------------------------------------*/
