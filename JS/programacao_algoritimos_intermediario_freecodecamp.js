@@ -505,7 +505,7 @@ function steamrollArray(arr) {
 
 /*---------------------------------------------------------------------------*/
 
-/*-------------------TRANSFORMAR DE BINARIO EM S TRING------------------------
+/*-------------------TRANSFORMAR DE BINARIO EM STRING------------------------
 Retorne uma frase traduzida para o inglês da string binária passada.
 A string binária será separada por espaço.*/
 
@@ -516,6 +516,22 @@ function binaryAgent(str) {
     message += String.fromCharCode(parseInt(binaryArray[i], 2));
   }
   return message;
+}
+
+/*---------------------------------------------------------------------------*/
+
+/*-----------------------VERIFICAR SE TUDO É VERDADEIRO-----------------------
+Verifique se o predicado (segundo argumento) é truthy em todos os elementos de 
+uma coleção (primeiro argumento). Em outras palavras, você recebe uma coleção 
+de array de objetos. O predicado pre será uma propriedade de objeto e você 
+precisa retornar true se seu valor for truthy. Caso contrário, retorne false.
+Em JavaScript, valores truthy são valores que traduzem para true quando avaliados 
+em um contexto booleano. Lembre-se, você pode acessar propriedades de objeto 
+através de notação de ponto ou notação [].*/
+
+function truthCheck(collection, pre) {
+  // Usa o método every para verificar se o predicado é truthy em todos os elementos
+  return collection.every(obj => obj[pre]);
 }
 
 /*---------------------------------------------------------------------------*/
