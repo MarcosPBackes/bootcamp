@@ -576,3 +576,51 @@ function addTogether() {
 }
 
 /*---------------------------------------------------------------------------*/
+
+/*------------------------------FAZER UMA PESSOA------------------------------
+Preencha o construtor do objeto com os seguintes métodos abaixo:
+getFirstName()
+getLastName()
+getFullName()
+setFirstName(first)
+setLastName(last)
+setFullName(firstAndLast)
+Execute os testes para ver a saída esperada para cada método. Os métodos que 
+recebem um argumento têm de aceitar apenas um argumento e tem de ser uma string. 
+Estes métodos devem constituir o único meio de interação com o objeto.*/
+
+const Person = function(firstAndLast) {
+  let firstName = firstAndLast.split(' ')[0];
+  let lastName = firstAndLast.split(' ')[1];
+
+  this.getFirstName = function() {
+    return firstName;
+  };
+
+  this.getLastName = function() {
+    return lastName;
+  };
+
+  this.getFullName = function() {
+    return `${firstName} ${lastName}`;
+  };
+
+  this.setFirstName = function(first) {
+    firstName = first;
+  };
+
+  this.setLastName = function(last) {
+    lastName = last;
+  };
+
+  this.setFullName = function(firstAndLast) {
+    firstName = firstAndLast.split(' ')[0];
+    lastName = firstAndLast.split(' ')[1];
+  };
+
+  return firstAndLast;
+};
+
+const bob = new Person('Bob Ross');
+
+/*---------------------------------------------------------------------------*/
