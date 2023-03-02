@@ -309,3 +309,22 @@ function encontrarParesDeBases(fileiraDNA) {
 }
 
 /*---------------------------------------------------------------------------*/
+
+/*-------------------------ENCONTRAR AS LETRAS FALTANDO----------------------
+Encontre a letra que falta no intervalo de letras passado e devolva-a.
+Se todas as letras estiverem presentes no intervalo, retorne undefined.*/
+
+function fearNotLetter(str) {
+  // Itera sobre cada caractere da string de entrada
+  for (let i = 0; i < str.length - 1; i++) {
+    // Verifica se há um intervalo entre o caractere atual e o próximo no alfabeto
+    if (str.charCodeAt(i+1) - str.charCodeAt(i) > 1) {
+      // Se houver um intervalo, retorna a letra que falta
+      return String.fromCharCode(str.charCodeAt(i) + 1);
+    }
+  }
+  // Se não houver letras ausentes, retorna undefined
+  return undefined;
+}
+
+/*---------------------------------------------------------------------------*/
