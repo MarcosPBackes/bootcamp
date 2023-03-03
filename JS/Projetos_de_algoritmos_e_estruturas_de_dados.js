@@ -72,3 +72,42 @@ function convertToRoman(num) {
 }
 
 /*---------------------------------------------------------------------------*/
+
+/*--------------------------------CIFRA DE CESAR-------------------------------
+Uma das cifras mais simples e mais conhecidas é a cifra de César, também conhecida 
+como uma cifra de mudança. Em uma cifra de transferência, os significados das 
+letras são deslocados de acordo com a quantidade definida.
+Um uso moderno comum é a cifra ROT13, onde os valores das letras são deslocados 
+em 13 lugares. Da seguinte forma: A ↔ N, B ↔ O e assim por diante.
+Escreva uma função que recebe uma string codificada de ROT13 como entrada e 
+retorna uma string decodificada. Todas as letras serão maiúsculas. Não transforme 
+nenhum caractere não-alfabético (ou seja, espaços, pontuação), mas passe por eles.*/
+
+function rot13(str) {
+    // Inicializa a string de saída
+    let decodedStr = "";
+  
+    // Percorre cada caractere da string de entrada
+    for (let i = 0; i < str.length; i++) {
+      // Obtém o código ASCII do caractere
+      let charCode = str.charCodeAt(i);
+  
+      // Se o caractere estiver entre A e M (ou a e m)
+      // adiciona 13 ao código ASCII
+      if (charCode >= 65 && charCode <= 77 || charCode >= 97 && charCode <= 109) {
+        charCode += 13;
+      }
+      // Se o caractere estiver entre N e Z (ou n e z)
+      // subtrai 13 do código ASCII
+      else if (charCode >= 78 && charCode <= 90 || charCode >= 110 && charCode <= 122) {
+        charCode -= 13;
+      }
+  
+      // Adiciona o caractere decodificado à string de saída
+      decodedStr += String.fromCharCode(charCode);
+    }
+  
+    return decodedStr;
+}
+
+/*---------------------------------------------------------------------------*/
